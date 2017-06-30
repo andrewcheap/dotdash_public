@@ -1,0 +1,12 @@
+<div ng-repeat="project in home.projects">
+	<button ng-click="home.getProject(project.id)">{{project.name}}</button>
+</div>
+<div>
+	<h2 ng-style="{'color':home.project.color}">{{home.project.name}}</h2>
+	<p>{{home.project.city}}</p>
+	<p>{{home.project.partner}}</p>
+	<p>{{home.project.completion}}</p>
+	<div ng-repeat="img in home.project.images" >
+		<img width="300px" ng-src="{{img}}">
+	</div>
+</div>

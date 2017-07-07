@@ -1,14 +1,14 @@
 (function() {
 	'use strict';
 
-	angular.module('portal.app', [
+	angular.module('public.app', [
 		// External dependencies
 		'ui.router',
 		
 		// Internal dependencies
-		'portal.routes',
-		'portal.api',
-		'portal.home',
+		'public.routes',
+		'public.api',
+		'public.home',
 		'templates'
 		])
 		.config(['$locationProvider',
@@ -19,6 +19,6 @@
 				});
 			}]);
 
-	angular.bootstrap(document, ['portal.app']);
+	angular.bootstrap(document, ['public.app']);
 
 })();

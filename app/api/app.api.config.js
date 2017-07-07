@@ -7,6 +7,6 @@
 		'PROJECT': 			_.template(base + 'project/${id}'),
 	};
 
-	angular.module('portal.api')
+	angular.module('public.api')
 		.constant('PORTAL_ENDPOINTS', api_endpoints);
 })();

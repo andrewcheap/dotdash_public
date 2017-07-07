@@ -8,6 +8,7 @@ module.exports = {
 		'vendor': [
 			"node_modules/angular/angular.js",
 			"node_modules/angular-ui-router/release/angular-ui-router.min.js",
+			"node_modules/angular-ui-carousel/dist/angular-ui-carousel.min.js",
 			"node_modules/lodash/lodash.min.js",
 		],
 		'app': [
@@ -19,13 +20,20 @@ module.exports = {
 
 			// SERVICES
 
-			// SHARED
 
 			// COMPONENTS
 
 			// home
 			"app/components/home/home.module.js",
 			"app/components/home/home.component.js",
+
+			// projectButtons
+			"app/components/projectButtons/projectButtons.module.js",
+			"app/components/projectButtons/projectButtons.component.js",
+
+			// SHARED
+			"app/shared/dashButton/dashButton.module.js",
+			"app/shared/dashButton/dashButton.component.js",
 
 			// routes
 			"app/app.routes.js",
@@ -37,6 +45,7 @@ module.exports = {
 			"app/app.module.js",
 					],
 		'vendorCss': [
+			"node_modules/angular-ui-carousel/dist/angular-ui-carousel.min.css",
 		],
 		'css': [
 			"app/components/**/*.css",

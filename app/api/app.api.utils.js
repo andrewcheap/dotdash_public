@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('portal.api')
+	angular.module('public.api')
 		.service('utilityService', ['$http', '$q', utilityService]);
 
 	function utilityService($http, $q) {

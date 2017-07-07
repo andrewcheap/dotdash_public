@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('portal.api')
+	angular.module('public.api')
 		.service('projectDataService', ['PORTAL_ENDPOINTS', 'utilityService', projectDataService]);
 
 	function projectDataService(PORTAL_ENDPOINTS, utilityService) {

@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('portal.routes', [])
+	angular.module('public.routes', [])
 		.config(['$stateProvider', '$urlRouterProvider', configRoutes]);
 
 	function configRoutes($stateProvider, $urlRouterProvider) {

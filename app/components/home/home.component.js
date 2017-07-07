@@ -1,35 +1,50 @@
 (function() {
 	'use strict';
 
-	angular.module('portal.home')
+	angular.module('public.home')
 		.component('home', {
 			templateUrl: 'home/home.template.html',
 			controller: homeController,
 			controllerAs: 'home',
-			bindings: {
-
-			}
 		});
 
-		function homeController(projectDataService, $location, $templateCache) {
+		function homeController(projectDataService, $location) {
 			/* jshint validthis: true */
 			var self = this;
 
 			// Interface
-			self.getProject 	= getProject;
+			self.getProject 		= getProject;
+			self.getDashNumber 		= getDashNumber;
+			self.getDotNumber 		= getDotNumber;
+			self.getProjectButton	= getProjectButton;
 
 
 			activate();
 			/////////////////////////
 			function activate(){
-				console.log('home');
 				// Get the projects
 				projectDataService.getProjects().then(getAllProjectsComplete).catch(requestRejected);
+			}
+
+			function getDashNumber(num) {
+				return new Array(num);   
+			}
+
+			function getDotNumber(num) {
+				return new Array(num);   
+			}
+
+			function getProjectButton(index){
+				var project = _.find(self.projects, function(proj) { return proj.position === index; });
+				console.log("project", project);
+				return project;
 			}
 
 			function getProject(id){
 				projectDataService.getProject(id).then(getProjectComplete).catch(requestRejected);
 			}
+
+
 
 			// Private methods for handling promises
 			function getAllProjectsComplete(results){

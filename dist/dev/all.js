@@ -33525,7 +33525,7 @@ var n=this.__index__>=this.__values__.length;return{done:n,value:n?F:this.__valu
 (function() {
 	'use strict';
 
-	angular.module('portal.api', [
+	angular.module('public.api', [
 			// External Dependencies
 
 			// Internal Dependencies
@@ -33540,13 +33540,13 @@ var n=this.__index__>=this.__values__.length;return{done:n,value:n?F:this.__valu
 		'PROJECT': 			_.template(base + 'project/${id}'),
 	};
 
-	angular.module('portal.api')
+	angular.module('public.api')
 		.constant('PORTAL_ENDPOINTS', api_endpoints);
 })();
 (function() {
 	'use strict';
 
-	angular.module('portal.api')
+	angular.module('public.api')
 		.service('projectDataService', ['PORTAL_ENDPOINTS', 'utilityService', projectDataService]);
 
 	function projectDataService(PORTAL_ENDPOINTS, utilityService) {
@@ -33583,7 +33583,7 @@ var n=this.__index__>=this.__values__.length;return{done:n,value:n?F:this.__valu
 (function() {
 	'use strict';
 
-	angular.module('portal.api')
+	angular.module('public.api')
 		.service('utilityService', ['$http', '$q', utilityService]);
 
 	function utilityService($http, $q) {
@@ -33654,44 +33654,61 @@ var n=this.__index__>=this.__values__.length;return{done:n,value:n?F:this.__valu
 (function() {
 	'use strict';
 
-	angular.module('portal.home', [
+	angular.module('public.home', [
 			// External Dependencies
 
 			// Internal Dependencies
+			'public.dashButton',
+
 		]);
 })();
 (function() {
 	'use strict';
 
-	angular.module('portal.home')
+	angular.module('public.home')
 		.component('home', {
 			templateUrl: 'home/home.template.html',
 			controller: homeController,
 			controllerAs: 'home',
-			bindings: {
-
-			}
 		});
 
-		function homeController(projectDataService, $location, $templateCache) {
+		function homeController(projectDataService, $location) {
 			/* jshint validthis: true */
 			var self = this;
 
 			// Interface
-			self.getProject 	= getProject;
+			self.getProject 		= getProject;
+			self.getDashNumber 		= getDashNumber;
+			self.getDotNumber 		= getDotNumber;
+			self.getProjectButton	= getProjectButton;
 
 
 			activate();
 			/////////////////////////
 			function activate(){
-				console.log('home');
 				// Get the projects
 				projectDataService.getProjects().then(getAllProjectsComplete).catch(requestRejected);
+			}
+
+			function getDashNumber(num) {
+				return new Array(num);   
+			}
+
+			function getDotNumber(num) {
+				return new Array(num);   
+			}
+
+			function getProjectButton(index){
+				var project = _.find(self.projects, function(proj) { return proj.position === index; });
+				console.log("project", project);
+				return project;
 			}
 
 			function getProject(id){
 				projectDataService.getProject(id).then(getProjectComplete).catch(requestRejected);
 			}
+
+
 
 			// Private methods for handling promises
 			function getAllProjectsComplete(results){
@@ -33713,7 +33730,100 @@ var n=this.__index__>=this.__values__.length;return{done:n,value:n?F:this.__valu
 (function() {
 	'use strict';
 
-	angular.module('portal.routes', [])
+	angular.module('public.projectButtons', [
+			// External Dependencies
+
+			// Internal Dependencies
+			
+		]);
+})();
+(function() {
+	'use strict';
+
+	angular.module('public.projectButtons')
+		.component('projectButtons', {
+			templateUrl: 'projectButtons/projectButtons.template.html',
+			controller: projectButtonsController,
+			controllerAs: 'buttons',
+			bindings: {
+				projects: '=',
+			}
+		});
+
+		function projectButtonsController() {
+			/* jshint validthis: true */
+			var self = this;
+
+			// Interface
+
+			
+			activate();
+			/////////////////////////
+
+			function activate(){
+				console.log("self.projects in button", self.projects);
+			}
+
+
+		}
+
+})();
+(function() {
+	'use strict';
+
+	angular.module('public.dashButton', [
+			// External Dependencies
+
+			// Internal Dependencies
+		]);
+})();
+(function() {
+	'use strict';
+
+	angular.module('public.dashButton')
+		.component('dashButton', {
+			templateUrl: 'dashButton/dashButton.template.html',
+			controller: dashButtonController,
+			controllerAs: 'dash',
+			bindings: {
+				project: '<?',
+			}
+		});
+
+		function dashButtonController($scope) {
+			/* jshint validthis: true */
+			var self = this;
+
+			// Interface
+			self.setDashColor	= setDashColor;
+
+			/////////////////////////
+			
+			// watch new project because we have to wait for project call to return
+			$scope.$watch(function(){
+				return self.project;
+			}, function(newValue, oldValue){
+				if(newValue){
+					self.project = newValue;
+				}
+			});
+
+			function setDashColor(){
+				console.log("setting colorr");
+				if(self.project) {
+					return { 'background-color': self.project.color};
+				}
+				else {
+					return { "visibility": "hidden"  };
+				}
+			}
+		}
+
+})();
+(function() {
+	'use strict';
+
+	angular.module('public.routes', [])
 		.config(['$stateProvider', '$urlRouterProvider', configRoutes]);
 
 	function configRoutes($stateProvider, $urlRouterProvider) {
@@ -33736,19 +33846,21 @@ var n=this.__index__>=this.__values__.length;return{done:n,value:n?F:this.__valu
 			});
 	}
 })();
-(function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('home/home.template.html','<div ng-repeat="project in home.projects">\n\t<button ng-click="home.getProject(project.id)">{{project.name}}</button>\n</div>\n<div>\n\t<h2 ng-style="{\'color\':home.project.color}">{{home.project.name}}</h2>\n\t<p>{{home.project.city}}</p>\n\t<p>{{home.project.partner}}</p>\n\t<p>{{home.project.completion}}</p>\n\t<div ng-repeat="img in home.project.images" >\n\t\t<img width="300px" ng-src="{{img}}">\n\t</div>\n</div>\n');
-$templateCache.put('dashButton/dashButton.template.html','');}]);})();
+(function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('home/home.template.html','<div class="container" ng-if="home.projects">\n\t<div class="dash-container-outer">\n\t\t<div class="dash-container-inner">\n\t\t\t<div class="dash" ng-repeat="i in home.getDashNumber(435) track by $index"></div>\n\t\t</div>\n\t</div>\n\t<div class="button-container-outer">\n\t\t<div class="button-container-inner">\n\t\t\t<dash-button ng-repeat="i in home.getDashNumber(435) track by $index" project="home.getProjectButton($index)"></dash-button>\n\t\t</div>\n\t</div>\n\t<div class="dot-container-outer">\n\t\t<div class="dot-container-inner">\n\t\t\t<div class="dot" ng-repeat="i in home.getDotNumber(1682) track by $index"></div>\n\t\t</div>\n\t</div>\n</div>');
+$templateCache.put('imageGallery/imageGallery.template.html','<!-- <ui-carousel \n    slides="ctrl.slides"\n    slides-to-show="3"\n    slides-to-scroll="1"\n    initial-slide="1"\n    autoplay="true"\n    autoplay-speed="2000"\n    dots="true">\n</ui-carousel> -->');
+$templateCache.put('projectButtons/projectButtons.template.html','');
+$templateCache.put('dashButton/dashButton.template.html','<div class="button" ng-style="dash.setDashColor()"></div>\n<p class="name">{{dash.project.name}}</p>');}]);})();
 (function() {
 	'use strict';
 
-	angular.module('portal.app', [
+	angular.module('public.app', [
 		// External dependencies
 		'ui.router',
 		
 		// Internal dependencies
-		'portal.routes',
-		'portal.api',
-		'portal.home',
+		'public.routes',
+		'public.api',
+		'public.home',
 		'templates'
 		])
 		.config(['$locationProvider',
@@ -33759,6 +33871,6 @@ $templateCache.put('dashButton/dashButton.template.html','');}]);})();
 				});
 			}]);
 
-	angular.bootstrap(document, ['portal.app']);
+	angular.bootstrap(document, ['public.app']);
 
 })();

@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('portal.api', [
+	angular.module('public.api', [
 			// External Dependencies
 
 			// Internal Dependencies

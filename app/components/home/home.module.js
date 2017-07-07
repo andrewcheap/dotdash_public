@@ -1,9 +1,11 @@
 (function() {
 	'use strict';
 
-	angular.module('portal.home', [
+	angular.module('public.home', [
 			// External Dependencies
 
 			// Internal Dependencies
+			'public.dashButton',
+
 		]);
 })();

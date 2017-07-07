@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	padding:0;
+	border:0;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+} 
+home {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+
+home .container {
+	display: block;
+	width: 1203px;
+	height: 342px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -171px;
+	margin-left: -601px;
+}
+
+home .dash-container-outer {
+	display: block;
+	width: 342px;
+	height: 342px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+
+home .dash-container-inner {
+	display: block;
+	width: 360px;
+	height: 342px;
+	position: relative;
+	top: -3px;
+	left: -9px;
+}
+
+home .button-container-outer {
+	display: block;
+	width: 342px;
+	height: 342px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+home .button-container-inner {
+	display: block;
+	width: 360px;
+	height: 342px;
+	position: relative;
+	top: -3px;
+	left: -9px;
+}
+
+home dash-button, home .dash {
+	float: right;
+	margin: 3px;
+}
+
+home .dash {
+	width: 18px;
+	height: 6px;
+	background: #000;
+}
+
+home .dot-container-outer {
+    width: 690px;
+    height: 342px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0,0,0,0);
+    overflow: hidden;
+}
+
+home .dot-container-inner {
+    width: 696px;
+    height: 348px;
+    position: relative;
+    top: -3px;
+    left: -3px;
+}
+
+home .dot {
+	width: 6px;
+    height: 6px;
+    margin: 3px;
+    background: #000;
+    border-radius: 50%;
+    float: left;
+}
+

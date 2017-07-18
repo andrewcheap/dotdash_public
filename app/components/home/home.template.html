@@ -6,12 +6,13 @@
 	</div>
 	<div class="button-container-outer">
 		<div class="button-container-inner">
-			<dash-button ng-repeat="i in home.getDashNumber(435) track by $index" project="home.getProjectButton($index)"></dash-button>
+			<dash-button callback="home.getProject(id)" ng-repeat="i in home.getDashNumber(435) track by $index" project="home.getProjectButton($index)"></dash-button>
 		</div>
 	</div>
 	<div class="dot-container-outer">
-		<div class="dot-container-inner">
+		<div ng-if="!home.project" class="dot-container-inner">
 			<div class="dot" ng-repeat="i in home.getDotNumber(1682) track by $index"></div>
 		</div>
+		<image-gallery ng-if="home.project" project="home.project"></image-gallery>
 	</div>
 </div>

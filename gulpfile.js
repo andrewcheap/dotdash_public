@@ -66,9 +66,15 @@ gulp.task('concatCSS', function() {
 		.pipe(gulp.dest(path.DEST_DEV))
 });
 
+/*get fonts*/
+gulp.task('getFonts', function() {
+	return gulp.src(config.files.fonts)
+		.pipe(gulp.dest(path.DEST_DEV + '/fonts'))
+});
+
 /* watch */
 gulp.task('watch', function() {
-	gulp.watch(path.WATCH_FILES, ['lint', 'templateCache', 'copy', 'concatCSS', 'concatJS']);
+	gulp.watch(path.WATCH_FILES, ['lint', 'templateCache', 'copy', 'concatCSS', 'concatJS','getFonts']);
 })
 
 /* set default */

@@ -36,11 +36,11 @@
 
 			function getProjectButton(index){
 				var project = _.find(self.projects, function(proj) { return proj.position === index; });
-				console.log("project", project);
 				return project;
 			}
 
 			function getProject(id){
+				console.log("getProject", id);
 				projectDataService.getProject(id).then(getProjectComplete).catch(requestRejected);
 			}
 

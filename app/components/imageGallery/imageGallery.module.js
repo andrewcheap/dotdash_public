@@ -3,9 +3,9 @@
 
 	angular.module('public.imageGallery', [
 			// External Dependencies
-			'ui.carousel',
-
+			'ui.bootstrap',
+			'ngAnimate',
 			// Internal Dependencies
-			'templates'
+			
 		]);
 })();

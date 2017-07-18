@@ -7,9 +7,12 @@ module.exports = {
 	'files': {
 		'vendor': [
 			"node_modules/angular/angular.js",
+			"node_modules/angular-animate/angular-animate.min.js",
+			"node_modules/angular-touch/angular-touch.min.js",
 			"node_modules/angular-ui-router/release/angular-ui-router.min.js",
-			"node_modules/angular-ui-carousel/dist/angular-ui-carousel.min.js",
 			"node_modules/lodash/lodash.min.js",
+			"node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js",
+			"node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"
 		],
 		'app': [
 			// API
@@ -28,8 +31,8 @@ module.exports = {
 			"app/components/home/home.component.js",
 
 			// projectButtons
-			"app/components/projectButtons/projectButtons.module.js",
-			"app/components/projectButtons/projectButtons.component.js",
+			"app/components/imageGallery/imageGallery.module.js",
+			"app/components/imageGallery/imageGallery.component.js",
 
 			// SHARED
 			"app/shared/dashButton/dashButton.module.js",
@@ -45,7 +48,14 @@ module.exports = {
 			"app/app.module.js",
 					],
 		'vendorCss': [
-			"node_modules/angular-ui-carousel/dist/angular-ui-carousel.min.css",
+			"node_modules/bootstrap/dist/css/bootstrap.css",
+		],
+		'fonts': [
+			"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot",
+			"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.svg",
+			"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
+			"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
+			"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2",
 		],
 		'css': [
 			"app/components/**/*.css",

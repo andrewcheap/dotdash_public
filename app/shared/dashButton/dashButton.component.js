@@ -8,6 +8,7 @@
 			controllerAs: 'dash',
 			bindings: {
 				project: '<?',
+				callback: '&'
 			}
 		});
 
@@ -30,7 +31,6 @@
 			});
 
 			function setDashColor(){
-				console.log("setting colorr");
 				if(self.project) {
 					return { 'background-color': self.project.color};
 				}

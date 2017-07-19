@@ -1,4 +1,4 @@
-<div uib-carousel active="gallery.active">
+<div uib-carousel template-url="imageGallery/slide.template.html" active="gallery.active">
     <div uib-slide ng-repeat="slide in gallery.project.images track by $index" index="$index">
         <img ng-src="{{slide}}" style="margin:auto;">
     </div>

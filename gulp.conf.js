@@ -57,6 +57,9 @@ module.exports = {
 			"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
 			"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2",
 		],
+		'icons': [
+			"assets/icons/**.*",
+		],
 		'css': [
 			"app/components/**/*.css",
 			"app/shared/**/*.css",

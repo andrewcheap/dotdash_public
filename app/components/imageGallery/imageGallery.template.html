@@ -1,5 +1,8 @@
-<div uib-carousel template-url="imageGallery/slide.template.html" active="gallery.active">
+<div ng-click="gallery.trackCarousel($event)" uib-carousel no-wrap="true" template-url="imageGallery/slide.template.html" active="gallery.active">
     <div uib-slide ng-repeat="slide in gallery.project.images track by $index" index="$index">
-        <img ng-src="{{slide}}" style="margin:auto;">
+        <img ng-src="{{slide}}">
     </div>
+</div>
+<div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails}" ng-click="gallery.showDetails=false;" class="details">
+	test
 </div>

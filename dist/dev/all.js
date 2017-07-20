@@ -49016,8 +49016,10 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 		function imageGalleryController($scope) {
 			/* jshint validthis: true */
 			var self = this;
-			var active = 0;
+			self.active = 0;
+
 			// Interface
+			self.trackCarousel = trackCarousel;
 
 			/////////////////////////
 			// watch new project because we have to wait for project call to return
@@ -49025,11 +49027,21 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 				return self.project;
 			}, function(newValue, oldValue){
 				if(newValue){
+					self.active = 0;
+					self.showDetails = false;
 					self.project = newValue;
 				}
 			});
 
 
+			function trackCarousel($event){
+				self.showDetails = $event.target.innerText === 'next' && self.lastImage ? true : false;
+
+				/* After we determin if we should show details, then we reset/check if the current
+				 image is the last image. */
+				self.lastImage = (self.active == self.project.images.length - 1) ? true : false;
+
+			}
 		}
 
 })();
@@ -49112,7 +49124,8 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 	}
 })();
 (function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('home/home.template.html','<div class="container" ng-if="home.projects">\n\t<div class="dash-container-outer">\n\t\t<div class="dash-container-inner">\n\t\t\t<div class="dash" ng-repeat="i in home.getDashNumber(435) track by $index"></div>\n\t\t</div>\n\t</div>\n\t<div class="button-container-outer">\n\t\t<div class="button-container-inner">\n\t\t\t<dash-button callback="home.getProject(id)" ng-repeat="i in home.getDashNumber(435) track by $index" project="home.getProjectButton($index)"></dash-button>\n\t\t</div>\n\t</div>\n\t<div class="dot-container-outer">\n\t\t<div ng-if="!home.project" class="dot-container-inner">\n\t\t\t<div class="dot" ng-repeat="i in home.getDotNumber(1682) track by $index"></div>\n\t\t</div>\n\t\t<image-gallery ng-if="home.project" project="home.project"></image-gallery>\n\t</div>\n</div>');
-$templateCache.put('imageGallery/imageGallery.template.html','<div uib-carousel active="gallery.active">\n    <div uib-slide ng-repeat="slide in gallery.project.images track by $index" index="$index">\n        <img ng-src="{{slide}}" style="margin:auto;">\n    </div>\n</div>');
+$templateCache.put('imageGallery/imageGallery.template.html','<div ng-click="gallery.trackCarousel($event)" uib-carousel no-wrap="true" template-url="imageGallery/slide.template.html" active="gallery.active">\n    <div uib-slide ng-repeat="slide in gallery.project.images track by $index" index="$index">\n        <img ng-src="{{slide}}">\n    </div>\n</div>\n<div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails}" ng-click="gallery.showDetails=false;" class="details">\n\ttest\n</div>');
+$templateCache.put('imageGallery/slide.template.html','<div class="carousel-inner" ng-transclude></div>\n<a role="button" href class="left carousel-control" ng-click="prev()" ng-class="{ disabled: isPrevDisabled() }" ng-show="slides.length > 1">\n  <span class="sr-only">previous</span>\n</a>\n<a role="button" href class="right carousel-control" ng-click="next()" ng-class="{ disabled: isNextDisabled() }" ng-show="slides.length > 1">\n  <span class="sr-only">next</span>\n</a>\n<ol class="carousel-indicators" ng-show="slides.length > 1">\n  <li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{ active: isActive(slide) }" ng-click="select(slide)">\n    <span class="sr-only">slide {{ $index + 1 }} of {{ slides.length }}<span ng-if="isActive(slide)">, currently active</span></span>\n  </li>\n</ol>');
 $templateCache.put('projectButtons/projectButtons.template.html','');
 $templateCache.put('dashButton/dashButton.template.html','<div class="button" ng-style="dash.setDashColor()" ng-click="dash.callback({id: dash.project.id})"></div>\n<p class="name">{{dash.project.name}}</p>');}]);})();
 (function() {

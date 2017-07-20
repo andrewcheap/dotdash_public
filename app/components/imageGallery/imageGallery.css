@@ -29,6 +29,36 @@ image-gallery .carousel-indicators li {
 	background: black;
 }
 
+image-gallery img {
+	margin: auto;
+}
+
 image-gallery .carousel-indicators .active {
 	background: white;
+}
+
+image-gallery .details {
+	position: absolute;
+	top: 0;
+	height: 342px;
+	background: rgba(0,0,0,.7);
+	width: 177px;
+}
+
+image-gallery .details.open {
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	right: 0px;
+}
+
+image-gallery .details.closed {
+	transition-property: all;
+	transition-duration: .1s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	right: -177px;
+}
+
+image-gallery .carousel-control.right,  image-gallery .carousel-control.left{
+	background-image: none;
 }

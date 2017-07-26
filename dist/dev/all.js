@@ -48952,6 +48952,45 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 				projectDataService.getProjects().then(getAllProjectsComplete).catch(requestRejected);
 			}
 
+			var info = {
+				color: '#0000ff',
+				name: 'Info',
+				company: {
+					name: 'Dot Dash',
+					address1: '120 Walker Street',
+					address2: 'Suite 6E',
+					city: 'New York, NY 10013',
+					phone: '212.951.0660',
+					email: 'info@dotdash.me',
+				},
+				employees: [
+					{
+						name: 'Christopher Cheap',
+						email: 'Christopher@dotdash.me'
+					},					
+					{
+						name: 'Brian Cheap',
+						email: 'Brian@dotdash.me'
+					},					
+					{
+						name: 'Isa Sanchez Sevillano',
+						email: 'Isa@dotdash.me'
+					},					
+					{
+						name: 'Fon Muangkeo',
+						email: 'Fon@dotdash.me'
+					},					
+					{
+						name: 'Julie Cheap',
+						email: 'Julie@dotdash.me'
+					},
+
+				],
+				profile: "Dot Dash is a New York City based design firm concentrating on architectural lighting design. Light is the emissary between architecture and the eye and, at Dot Dash, is our medium to reveal form, material and texture - to exhibit the built environment and augment the human experience.   Our approach begins with a comprehensive study of the architectural design, materials, liberties, constraints, and programmatic requirements.  This analysis serves as the foundation for our design approach and proposals. Our diverse experience across all project types and architectural styles, allows us to bring innovative designs with the highest level of expertise to each project. We are passionate about the design process and believe that an intimate collaboration yields the best results.",
+				principal: "In addition to our lighting experience, Dot Dash brings extensive knowledge of daylighting, control systems, LEED Certification, systems integration, and on-site construction administration.  We understand that award winning projects begin in the studio but are realized with careful attention through project completion.",
+				team_photo: '/icons/team_photo.jpg'
+			};
+
 			function getDashNumber(num) {
 				return new Array(num);   
 			}
@@ -48961,7 +49000,16 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 			}
 
 			function getProjectButton(index){
-				var project = _.find(self.projects, function(proj) { return proj.position === index; });
+
+				var project;
+				if(index === 7 || index === 37 || index === 52 ||
+					index === 67 || index === 82) {
+					project = info;
+				}
+				else{
+					project = _.find(self.projects, function(proj) { return proj.position === index; });
+				}
+
 				return project;
 			}
 
@@ -49124,10 +49172,9 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 	}
 })();
 (function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('home/home.template.html','<div class="container" ng-if="home.projects">\n\t<div class="dash-container-outer">\n\t\t<div class="dash-container-inner">\n\t\t\t<div class="dash" ng-repeat="i in home.getDashNumber(435) track by $index"></div>\n\t\t</div>\n\t</div>\n\t<div class="button-container-outer">\n\t\t<div class="button-container-inner">\n\t\t\t<dash-button callback="home.getProject(id)" ng-repeat="i in home.getDashNumber(435) track by $index" project="home.getProjectButton($index)"></dash-button>\n\t\t</div>\n\t</div>\n\t<div class="dot-container-outer">\n\t\t<div ng-if="!home.project" class="dot-container-inner">\n\t\t\t<div class="dot" ng-repeat="i in home.getDotNumber(1682) track by $index"></div>\n\t\t</div>\n\t\t<image-gallery ng-if="home.project" project="home.project"></image-gallery>\n\t</div>\n</div>');
-$templateCache.put('imageGallery/imageGallery.template.html','<div ng-click="gallery.trackCarousel($event)" uib-carousel no-wrap="true" template-url="imageGallery/slide.template.html" active="gallery.active">\n    <div uib-slide ng-repeat="slide in gallery.project.images track by $index" index="$index">\n        <img ng-src="{{slide}}">\n    </div>\n</div>\n<div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails}" ng-click="gallery.showDetails=false;" class="details">\n\ttest\n</div>');
+$templateCache.put('imageGallery/imageGallery.template.html','<div ng-click="gallery.trackCarousel($event)" uib-carousel no-wrap="true" template-url="imageGallery/slide.template.html" active="gallery.active">\n    <div uib-slide ng-repeat="slide in gallery.project.images track by $index" index="$index">\n        <img ng-src="{{slide}}">\n    </div>\n</div>\n<div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails}" ng-click="gallery.showDetails=false;" class="details">\n\t<h3>{{gallery.project.name}}</h3>\n\t<p>{{gallery.project.city}}</p>\n\t<ul ng-repeat="detail in gallery.project.details">\n\t\t<li>{{detail.fieldContent}}</li>\n\t\t<li>{{detail.fieldName}}</li>\n\t</ul>\n</div>');
 $templateCache.put('imageGallery/slide.template.html','<div class="carousel-inner" ng-transclude></div>\n<a role="button" href class="left carousel-control" ng-click="prev()" ng-class="{ disabled: isPrevDisabled() }" ng-show="slides.length > 1">\n  <span class="sr-only">previous</span>\n</a>\n<a role="button" href class="right carousel-control" ng-click="next()" ng-class="{ disabled: isNextDisabled() }" ng-show="slides.length > 1">\n  <span class="sr-only">next</span>\n</a>\n<ol class="carousel-indicators" ng-show="slides.length > 1">\n  <li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{ active: isActive(slide) }" ng-click="select(slide)">\n    <span class="sr-only">slide {{ $index + 1 }} of {{ slides.length }}<span ng-if="isActive(slide)">, currently active</span></span>\n  </li>\n</ol>');
-$templateCache.put('projectButtons/projectButtons.template.html','');
-$templateCache.put('dashButton/dashButton.template.html','<div class="button" ng-style="dash.setDashColor()" ng-click="dash.callback({id: dash.project.id})"></div>\n<p class="name">{{dash.project.name}}</p>');}]);})();
+$templateCache.put('dashButton/dashButton.template.html','<div class="button" ng-class="{info: dash.project.name === \'Info\'}" ng-style="dash.setDashColor()" ng-click="dash.callback({id: dash.project.id})"></div>\n<p class="name">{{dash.project.name}}</p>');}]);})();
 (function() {
 	'use strict';
 

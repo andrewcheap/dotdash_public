@@ -4,5 +4,10 @@
     </div>
 </div>
 <div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails}" ng-click="gallery.showDetails=false;" class="details">
-	test
+	<h3>{{gallery.project.name}}</h3>
+	<p>{{gallery.project.city}}</p>
+	<ul ng-repeat="detail in gallery.project.details">
+		<li>{{detail.fieldContent}}</li>
+		<li>{{detail.fieldName}}</li>
+	</ul>
 </div>

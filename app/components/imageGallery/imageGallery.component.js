@@ -6,12 +6,9 @@
 			templateUrl: 'imageGallery/imageGallery.template.html',
 			controller: imageGalleryController,
 			controllerAs: 'gallery',
-			bindings: {
-				project: '=',
-			}
 		});
 
-		function imageGalleryController($scope) {
+		function imageGalleryController(projectDataService, $scope, $stateParams) {
 			/* jshint validthis: true */
 			var self = this;
 			self.active = 0;
@@ -19,18 +16,15 @@
 			// Interface
 			self.trackCarousel = trackCarousel;
 
-			/////////////////////////
-			// watch new project because we have to wait for project call to return
-			$scope.$watch(function(){
-				return self.project;
-			}, function(newValue, oldValue){
-				if(newValue){
-					self.active = 0;
-					self.showDetails = false;
-					self.project = newValue;
-				}
-			});
+			activate();
 
+			/////////////////////////
+			function activate(){
+				console.log("stateParams", $stateParams.id);
+				if($stateParams.id) {
+					projectDataService.getProject($stateParams.id).then(getProjectComplete).catch(requestRejected);
+				}
+			}
 
 			function trackCarousel($event){
 				self.showDetails = $event.target.innerText === 'next' && self.lastImage ? true : false;
@@ -39,6 +33,19 @@
 				 image is the last image. */
 				self.lastImage = (self.active == self.project.images.length - 1) ? true : false;
 
+			}
+
+			// Private methods for handling promises
+			function getProjectComplete(results){
+				console.log("here");
+				self.project = results.data;
+				self.active = 0;
+				self.showDetails = false;
+				console.log("complete", results);
+			}
+
+			function requestRejected(error){
+				console.log("error", error);
 			}
 		}
 

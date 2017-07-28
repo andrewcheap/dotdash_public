@@ -30,9 +30,13 @@ module.exports = {
 			"app/components/home/home.module.js",
 			"app/components/home/home.component.js",
 
-			// projectButtons
+			// imageGallery
 			"app/components/imageGallery/imageGallery.module.js",
 			"app/components/imageGallery/imageGallery.component.js",
+
+			// info
+			"app/components/info/info.module.js",
+			"app/components/info/info.component.js",
 
 			// SHARED
 			"app/shared/dashButton/dashButton.module.js",

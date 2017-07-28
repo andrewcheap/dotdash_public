@@ -1,0 +1,15 @@
+<div class="carousel-inner" ng-transclude></div>
+<ol class="carousel-indicators" ng-show="slides.length > 1">
+  <li ng-class="{ active: isActive(slides[0]) }" ng-click="select(slides[0])">
+  	<h4>Contact</h4>
+    <span class="sr-only">Contacts<span ng-if="isActive(slides[0])">, currently active</span></span>
+  </li>
+  <li ng-class="{ active: isActive(slides[1]) }" ng-click="select(slides[1])">
+  	<h4>Profile</h4>
+    <span class="sr-only">Profile<span ng-if="isActive(slides[1])">, currently active</span></span>
+  </li>
+  <li ng-class="{ active: isActive(slides[2]) }" ng-click="select(slides[2])">
+  	<h4>Principal</h4>
+    <span class="sr-only">Principal<span ng-if="isActive(slides[2])">, currently active</span></span>
+  </li>
+</ol>

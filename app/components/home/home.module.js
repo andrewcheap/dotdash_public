@@ -7,6 +7,7 @@
 			// Internal Dependencies
 			'public.dashButton',
 			'public.imageGallery',
+			'public.info',
 
 		]);
 })();

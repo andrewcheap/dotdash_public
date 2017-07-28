@@ -13,6 +13,6 @@
 		<div ng-if="!home.project" class="dot-container-inner">
 			<div class="dot" ng-repeat="i in home.getDotNumber(1682) track by $index"></div>
 		</div>
-		<image-gallery ng-if="home.project" project="home.project"></image-gallery>
+		<div ui-view></div>
 	</div>
 </div>

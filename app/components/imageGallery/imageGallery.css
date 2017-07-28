@@ -1,3 +1,9 @@
+image-gallery {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 image-gallery .carousel-control {
 	width: 50%;
 }

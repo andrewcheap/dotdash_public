@@ -1,0 +1,31 @@
+<div uib-carousel no-wrap="true" template-url="info/slideInfo.template.html" active="info.active">
+    <div uib-slide index="0">
+        <div class="slide">
+        	<h2>Dot Dash</h2>
+        	<address>
+        		{{info.info.company.address1}}<br>
+        		{{info.info.company.address2}}<br>
+        		{{info.info.company.city}}<br>
+        		{{info.info.company.phone}}<br>
+        		{{info.info.company.email}}
+        	</address>
+        	<ul ng-repeat="employee in info.info.employees">
+        		<li>{{employee.name}}</li>
+        		<li>{{employe.email}}</li>
+        	</ul>
+        	<img src="icons/team_photo.jpg">
+        </div>
+    </div>
+     <div uib-slide index="1">
+        <div class="slide">
+        	<h2>Profile</h2>
+        	<p>{{info.info.profile}}</p>
+        </div>
+    </div>
+     <div uib-slide index="2">
+        <div class="slide">
+        	<h2>Principal</h2>
+        	<p>{{info.info.principal}}</p>
+        </div>
+    </div>
+</div>

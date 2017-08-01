@@ -33443,6 +33443,24 @@ function(a){n=!1;d.removeClass("ng-click-active")});d.on("touchend",function(c){
 [c]));n=!1;d.removeClass("ng-click-active")});d.onclick=function(a){};d.on("click",function(a,b){h.$apply(function(){c(h,{$event:b||a})})});d.on("mousedown",function(a){d.addClass("ng-click-active")});d.on("mousemove mouseup",function(a){d.removeClass("ng-click-active")})}}];v("ngSwipeLeft",-1,"swipeleft");v("ngSwipeRight",1,"swiperight")})(window,window.angular);
 //# sourceMappingURL=angular-touch.min.js.map
 
+/*
+ AngularJS v1.6.5
+ (c) 2010-2017 Google, Inc. http://angularjs.org
+ License: MIT
+*/
+(function(s,d){'use strict';function J(d){var k=[];w(k,B).chars(d);return k.join("")}var x=d.$$minErr("$sanitize"),C,k,D,E,p,B,F,G,w;d.module("ngSanitize",[]).provider("$sanitize",function(){function g(a,e){var c={},b=a.split(","),f;for(f=0;f<b.length;f++)c[e?p(b[f]):b[f]]=!0;return c}function K(a){for(var e={},c=0,b=a.length;c<b;c++){var f=a[c];e[f.name]=f.value}return e}function H(a){return a.replace(/&/g,"&amp;").replace(L,function(a){var c=a.charCodeAt(0);a=a.charCodeAt(1);return"&#"+(1024*(c-
+55296)+(a-56320)+65536)+";"}).replace(M,function(a){return"&#"+a.charCodeAt(0)+";"}).replace(/</g,"&lt;").replace(/>/g,"&gt;")}function I(a){for(;a;){if(a.nodeType===s.Node.ELEMENT_NODE)for(var e=a.attributes,c=0,b=e.length;c<b;c++){var f=e[c],h=f.name.toLowerCase();if("xmlns:ns1"===h||0===h.lastIndexOf("ns1:",0))a.removeAttributeNode(f),c--,b--}(e=a.firstChild)&&I(e);a=t("nextSibling",a)}}function t(a,e){var c=e[a];if(c&&F.call(e,c))throw x("elclob",e.outerHTML||e.outerText);return c}var y=!1;this.$get=
+["$$sanitizeUri",function(a){y&&k(n,z);return function(e){var c=[];G(e,w(c,function(b,c){return!/^unsafe:/.test(a(b,c))}));return c.join("")}}];this.enableSvg=function(a){return E(a)?(y=a,this):y};C=d.bind;k=d.extend;D=d.forEach;E=d.isDefined;p=d.lowercase;B=d.noop;G=function(a,e){null===a||void 0===a?a="":"string"!==typeof a&&(a=""+a);var c=u(a);if(!c)return"";var b=5;do{if(0===b)throw x("uinput");b--;a=c.innerHTML;c=u(a)}while(a!==c.innerHTML);for(b=c.firstChild;b;){switch(b.nodeType){case 1:e.start(b.nodeName.toLowerCase(),
+K(b.attributes));break;case 3:e.chars(b.textContent)}var f;if(!(f=b.firstChild)&&(1===b.nodeType&&e.end(b.nodeName.toLowerCase()),f=t("nextSibling",b),!f))for(;null==f;){b=t("parentNode",b);if(b===c)break;f=t("nextSibling",b);1===b.nodeType&&e.end(b.nodeName.toLowerCase())}b=f}for(;b=c.firstChild;)c.removeChild(b)};w=function(a,e){var c=!1,b=C(a,a.push);return{start:function(a,h){a=p(a);!c&&A[a]&&(c=a);c||!0!==n[a]||(b("<"),b(a),D(h,function(c,h){var d=p(h),g="img"===a&&"src"===d||"background"===
+d;!0!==v[d]||!0===m[d]&&!e(c,g)||(b(" "),b(h),b('="'),b(H(c)),b('"'))}),b(">"))},end:function(a){a=p(a);c||!0!==n[a]||!0===h[a]||(b("</"),b(a),b(">"));a==c&&(c=!1)},chars:function(a){c||b(H(a))}}};F=s.Node.prototype.contains||function(a){return!!(this.compareDocumentPosition(a)&16)};var L=/[\uD800-\uDBFF][\uDC00-\uDFFF]/g,M=/([^#-~ |!])/g,h=g("area,br,col,hr,img,wbr"),q=g("colgroup,dd,dt,li,p,tbody,td,tfoot,th,thead,tr"),l=g("rp,rt"),r=k({},l,q),q=k({},q,g("address,article,aside,blockquote,caption,center,del,dir,div,dl,figure,figcaption,footer,h1,h2,h3,h4,h5,h6,header,hgroup,hr,ins,map,menu,nav,ol,pre,section,table,ul")),
+l=k({},l,g("a,abbr,acronym,b,bdi,bdo,big,br,cite,code,del,dfn,em,font,i,img,ins,kbd,label,map,mark,q,ruby,rp,rt,s,samp,small,span,strike,strong,sub,sup,time,tt,u,var")),z=g("circle,defs,desc,ellipse,font-face,font-face-name,font-face-src,g,glyph,hkern,image,linearGradient,line,marker,metadata,missing-glyph,mpath,path,polygon,polyline,radialGradient,rect,stop,svg,switch,text,title,tspan"),A=g("script,style"),n=k({},h,q,l,r),m=g("background,cite,href,longdesc,src,xlink:href"),r=g("abbr,align,alt,axis,bgcolor,border,cellpadding,cellspacing,class,clear,color,cols,colspan,compact,coords,dir,face,headers,height,hreflang,hspace,ismap,lang,language,nohref,nowrap,rel,rev,rows,rowspan,rules,scope,scrolling,shape,size,span,start,summary,tabindex,target,title,type,valign,value,vspace,width"),
+l=g("accent-height,accumulate,additive,alphabetic,arabic-form,ascent,baseProfile,bbox,begin,by,calcMode,cap-height,class,color,color-rendering,content,cx,cy,d,dx,dy,descent,display,dur,end,fill,fill-rule,font-family,font-size,font-stretch,font-style,font-variant,font-weight,from,fx,fy,g1,g2,glyph-name,gradientUnits,hanging,height,horiz-adv-x,horiz-origin-x,ideographic,k,keyPoints,keySplines,keyTimes,lang,marker-end,marker-mid,marker-start,markerHeight,markerUnits,markerWidth,mathematical,max,min,offset,opacity,orient,origin,overline-position,overline-thickness,panose-1,path,pathLength,points,preserveAspectRatio,r,refX,refY,repeatCount,repeatDur,requiredExtensions,requiredFeatures,restart,rotate,rx,ry,slope,stemh,stemv,stop-color,stop-opacity,strikethrough-position,strikethrough-thickness,stroke,stroke-dasharray,stroke-dashoffset,stroke-linecap,stroke-linejoin,stroke-miterlimit,stroke-opacity,stroke-width,systemLanguage,target,text-anchor,to,transform,type,u1,u2,underline-position,underline-thickness,unicode,unicode-range,units-per-em,values,version,viewBox,visibility,width,widths,x,x-height,x1,x2,xlink:actuate,xlink:arcrole,xlink:role,xlink:show,xlink:title,xlink:type,xml:base,xml:lang,xml:space,xmlns,xmlns:xlink,y,y1,y2,zoomAndPan",
+!0),v=k({},m,l,r),u=function(a,e){function c(b){b="<remove></remove>"+b;try{var c=(new a.DOMParser).parseFromString(b,"text/html").body;c.firstChild.remove();return c}catch(e){}}function b(a){d.innerHTML=a;e.documentMode&&I(d);return d}var h;if(e&&e.implementation)h=e.implementation.createHTMLDocument("inert");else throw x("noinert");var d=(h.documentElement||h.getDocumentElement()).querySelector("body");d.innerHTML='<svg><g onload="this.parentNode.remove()"></g></svg>';return d.querySelector("svg")?
+(d.innerHTML='<svg><p><style><img src="</style><img src=x onerror=alert(1)//">',d.querySelector("svg img")?c:b):function(b){b="<remove></remove>"+b;try{b=encodeURI(b)}catch(c){return}var e=new a.XMLHttpRequest;e.responseType="document";e.open("GET","data:text/html;charset=utf-8,"+b,!1);e.send(null);b=e.response.body;b.firstChild.remove();return b}}(s,s.document)}).info({angularVersion:"1.6.5"});d.module("ngSanitize").filter("linky",["$sanitize",function(g){var k=/((ftp|https?):\/\/|(www\.)|(mailto:)?[A-Za-z0-9._%+-]+@)\S*[^\s.;,(){}<>"\u201d\u2019]/i,
+p=/^mailto:/i,s=d.$$minErr("linky"),t=d.isDefined,y=d.isFunction,w=d.isObject,x=d.isString;return function(d,q,l){function r(a){a&&m.push(J(a))}function z(a,d){var c,b=A(a);m.push("<a ");for(c in b)m.push(c+'="'+b[c]+'" ');!t(q)||"target"in b||m.push('target="',q,'" ');m.push('href="',a.replace(/"/g,"&quot;"),'">');r(d);m.push("</a>")}if(null==d||""===d)return d;if(!x(d))throw s("notstring",d);for(var A=y(l)?l:w(l)?function(){return l}:function(){return{}},n=d,m=[],v,u;d=n.match(k);)v=d[0],d[2]||
+d[4]||(v=(d[3]?"http://":"mailto:")+v),u=d.index,r(n.substr(0,u)),z(v,d[0].replace(p,"")),n=n.substring(u+d[0].length);r(n);return g(m.join(""))}}])})(window,window.angular);
+//# sourceMappingURL=angular-sanitize.min.js.map
+
 /**
  * State-based routing for AngularJS 1.x
  * NOTICE: This monolithic bundle also bundles the @uirouter/core code.
@@ -48921,6 +48939,7 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 			// Internal Dependencies
 			'public.dashButton',
 			'public.imageGallery',
+			'public.info',
 
 		]);
 })();
@@ -48955,40 +48974,7 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 			var info = {
 				color: '#0000ff',
 				name: 'Info',
-				company: {
-					name: 'Dot Dash',
-					address1: '120 Walker Street',
-					address2: 'Suite 6E',
-					city: 'New York, NY 10013',
-					phone: '212.951.0660',
-					email: 'info@dotdash.me',
-				},
-				employees: [
-					{
-						name: 'Christopher Cheap',
-						email: 'Christopher@dotdash.me'
-					},					
-					{
-						name: 'Brian Cheap',
-						email: 'Brian@dotdash.me'
-					},					
-					{
-						name: 'Isa Sanchez Sevillano',
-						email: 'Isa@dotdash.me'
-					},					
-					{
-						name: 'Fon Muangkeo',
-						email: 'Fon@dotdash.me'
-					},					
-					{
-						name: 'Julie Cheap',
-						email: 'Julie@dotdash.me'
-					},
-
-				],
-				profile: "Dot Dash is a New York City based design firm concentrating on architectural lighting design. Light is the emissary between architecture and the eye and, at Dot Dash, is our medium to reveal form, material and texture - to exhibit the built environment and augment the human experience.   Our approach begins with a comprehensive study of the architectural design, materials, liberties, constraints, and programmatic requirements.  This analysis serves as the foundation for our design approach and proposals. Our diverse experience across all project types and architectural styles, allows us to bring innovative designs with the highest level of expertise to each project. We are passionate about the design process and believe that an intimate collaboration yields the best results.",
-				principal: "In addition to our lighting experience, Dot Dash brings extensive knowledge of daylighting, control systems, LEED Certification, systems integration, and on-site construction administration.  We understand that award winning projects begin in the studio but are realized with careful attention through project completion.",
-				team_photo: '/icons/team_photo.jpg'
+				id: 'info',
 			};
 
 			function getDashNumber(num) {
@@ -49000,10 +48986,9 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 			}
 
 			function getProjectButton(index){
-
 				var project;
-				if(index === 7 || index === 37 || index === 52 ||
-					index === 67 || index === 82) {
+
+				if(isInfoButton(index)) {
 					project = info;
 				}
 				else{
@@ -49014,21 +48999,25 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 			}
 
 			function getProject(id){
-				console.log("getProject", id);
-				projectDataService.getProject(id).then(getProjectComplete).catch(requestRejected);
+				var url = "/" + id;
+				$location.path(url);
 			}
 
-
+			//Private methods
+			function isInfoButton(index){
+				if(index === 7 || index === 37 || index === 52 ||
+					index === 67 || index === 82) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+							
 
 			// Private methods for handling promises
 			function getAllProjectsComplete(results){
 				self.projects = results.data;
-				console.log("self.projects", self.projects);
-				console.log("complete", results);
-			}
-
-			function getProjectComplete(results){
-				self.project = results.data;
 				console.log("complete", results);
 			}
 
@@ -49056,12 +49045,9 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 			templateUrl: 'imageGallery/imageGallery.template.html',
 			controller: imageGalleryController,
 			controllerAs: 'gallery',
-			bindings: {
-				project: '=',
-			}
 		});
 
-		function imageGalleryController($scope) {
+		function imageGalleryController(projectDataService, $scope, $stateParams) {
 			/* jshint validthis: true */
 			var self = this;
 			self.active = 0;
@@ -49069,18 +49055,15 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 			// Interface
 			self.trackCarousel = trackCarousel;
 
-			/////////////////////////
-			// watch new project because we have to wait for project call to return
-			$scope.$watch(function(){
-				return self.project;
-			}, function(newValue, oldValue){
-				if(newValue){
-					self.active = 0;
-					self.showDetails = false;
-					self.project = newValue;
-				}
-			});
+			activate();
 
+			/////////////////////////
+			function activate(){
+				console.log("stateParams", $stateParams.id);
+				if($stateParams.id) {
+					projectDataService.getProject($stateParams.id).then(getProjectComplete).catch(requestRejected);
+				}
+			}
 
 			function trackCarousel($event){
 				self.showDetails = $event.target.innerText === 'next' && self.lastImage ? true : false;
@@ -49090,6 +49073,100 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 				self.lastImage = (self.active == self.project.images.length - 1) ? true : false;
 
 			}
+
+			// Private methods for handling promises
+			function getProjectComplete(results){
+				console.log("here");
+				self.project = results.data;
+				self.active = 0;
+				self.showDetails = false;
+				console.log("complete", results);
+			}
+
+			function requestRejected(error){
+				console.log("error", error);
+			}
+		}
+
+})();
+(function() {
+	'use strict';
+
+	angular.module('public.info', [
+			// External Dependencies
+			'ui.bootstrap',
+			'ngAnimate',
+			'ngSanitize',
+			// Internal Dependencies
+			
+		]);
+})();
+(function() {
+	'use strict';
+
+	angular.module('public.info')
+		.component('info', {
+			templateUrl: 'info/info.template.html',
+			controller: infoController,
+			controllerAs: 'info',
+		});
+
+		function infoController(projectDataService, $scope, $stateParams) {
+			/* jshint validthis: true */
+			var self = this;
+			self.active = 0;
+
+			// Interface
+
+
+			activate();
+
+			/////////////////////////
+			function activate(){
+				self.info = {
+					color: '#0000ff',
+					name: 'Info',
+					id: 'info',
+					company: {
+						name: 'Dot Dash',
+						address1: '120 Walker Street',
+						address2: 'Suite 6E',
+						city: 'New York, NY 10013',
+						phone: '212.951.0660',
+						email: 'info@dotdash.me',
+						map: 'https://www.google.com/maps/place/120+Walker+St,+New+York,+NY+10013/@40.7175678,-74.0018692,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25a275bcee06b:0x7b3ea15184d2e194!8m2!3d40.7175678!4d-73.9996805',
+					},
+					employees: [
+						{
+							name: 'Christopher Cheap',
+							email: 'Christopher@dotdash.me'
+						},					
+						{
+							name: 'Brian Cheap',
+							email: 'Brian@dotdash.me'
+						},					
+						{
+							name: 'Isa Sanchez Sevillano',
+							email: 'Isa@dotdash.me'
+						},					
+						{
+							name: 'Fon Muangkeo',
+							email: 'Fon@dotdash.me'
+						},					
+						{
+							name: 'Julie Cheap',
+							email: 'Julie@dotdash.me'
+						},
+
+					],
+					profile: "<p>Dot Dash is a New York City based design firm concentrating on architectural lighting design. Light is the emissary between architecture and the eye and, at Dot Dash, is our medium to reveal form, material and texture - to exhibit the built environment and augment the human experience.   Our approach begins with a comprehensive study of the architectural design, materials, liberties, constraints, and programmatic requirements.  This analysis serves as the foundation for our design approach and proposals. Our diverse experience across all project types and architectural styles, allows us to bring innovative designs with the highest level of expertise to each project. We are passionate about the design process and believe that an intimate collaboration yields the best results.</p><p>In addition to our lighting experience, Dot Dash brings extensive knowledge of daylighting, control systems, LEED Certification, systems integration, and on-site construction administration.  We understand that award winning projects begin in the studio but are realized with careful attention through project completion.</p>",
+					principal: "<p>Dot Dash was founded by Christopher Cheap in 2014. His extensive experience across all project types, scales, budgets, and styles has included the Brooklyn Bridge Pier 6 Pavilion with BIG Architects, the Botswana Innovation Hub with SHoP Architects, the Lotte Tower with KPF,  a renovation of artist Cai Quo-Qiang’s Studio with OMA, the transformation of Wardman Tower into Luxury Residences with Deborah Berke Partners, the new Columbia University Graduate and Medical Education Building with Diller Scofidio + Renfro, and the Corporate Offices for a private equity firm in New York City with Gensler.  Christopher oversees all aspects of every project from concept through completion to ensure the highest standards of design and documentation.</p><p>Prior to forming Dot Dash, Christopher was a Principal with Tillotson Design Associates.  His projects have won several awards including an IALD award of Excellence, an IES Lumen Citation, a GE award of Excellence, and an A|L Outstanding Achievement Award.  Christopher is a professional member of the IALD.  He lives in Brooklyn, NY with his wife and two daughters.</p>",
+					team_photo: '/icons/team_photo.jpg'
+				};
+			}
+
+
+
 		}
 
 })();
@@ -49122,6 +49199,8 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 
 			// Interface
 			self.setDashColor	= setDashColor;
+			self.setInfoHover 		= setInfoHover;
+			self.removeInfoHover 	= removeInfoHover;
 
 			/////////////////////////
 			
@@ -49142,6 +49221,18 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 					return { "visibility": "hidden"  };
 				}
 			}
+
+			function setInfoHover(){
+				var infoButtons = document.getElementsByClassName("info");
+				angular.element(infoButtons).addClass('hover');
+				angular.element(infoButtons[4]).addClass('info-last');
+
+			}
+
+			function removeInfoHover(){
+				var infoButtons = document.getElementsByClassName("info");
+				angular.element(infoButtons).removeClass('hover');
+			}
 		}
 
 })();
@@ -49160,21 +49251,29 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 					pageTitle: "Dot Dash Portal | Lighting Design"
 				},
 				url:'/',
-				template: '<home></home>'
+			})
+			.state("info", {
+				data: {
+					pageTitle: "Dot Dash Portal | Lighting Design"
+				},
+				url:'/info',
+				template: '<info></info>'
 			})
 			.state("projectDetails", {
 				data: {
 					pageTitle: "Dot Dash Portal | Lighting Design"
 				},
 				url:'/:id',
-				template: '<home></home>'
+				template: '<image-gallery></image-gallery>'
 			});
 	}
 })();
-(function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('home/home.template.html','<div class="container" ng-if="home.projects">\n\t<div class="dash-container-outer">\n\t\t<div class="dash-container-inner">\n\t\t\t<div class="dash" ng-repeat="i in home.getDashNumber(435) track by $index"></div>\n\t\t</div>\n\t</div>\n\t<div class="button-container-outer">\n\t\t<div class="button-container-inner">\n\t\t\t<dash-button callback="home.getProject(id)" ng-repeat="i in home.getDashNumber(435) track by $index" project="home.getProjectButton($index)"></dash-button>\n\t\t</div>\n\t</div>\n\t<div class="dot-container-outer">\n\t\t<div ng-if="!home.project" class="dot-container-inner">\n\t\t\t<div class="dot" ng-repeat="i in home.getDotNumber(1682) track by $index"></div>\n\t\t</div>\n\t\t<image-gallery ng-if="home.project" project="home.project"></image-gallery>\n\t</div>\n</div>');
+(function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('home/home.template.html','<div class="container" ng-if="home.projects">\n\t<div class="dash-container-outer">\n\t\t<div class="dash-container-inner">\n\t\t\t<div class="dash" ng-repeat="i in home.getDashNumber(435) track by $index"></div>\n\t\t</div>\n\t</div>\n\t<div class="button-container-outer">\n\t\t<div class="button-container-inner">\n\t\t\t<dash-button callback="home.getProject(id)" ng-repeat="i in home.getDashNumber(435) track by $index" project="home.getProjectButton($index)"></dash-button>\n\t\t</div>\n\t</div>\n\t<div class="dot-container-outer">\n\t\t<div ng-if="!home.project" class="dot-container-inner">\n\t\t\t<div class="dot" ng-repeat="i in home.getDotNumber(1682) track by $index"></div>\n\t\t</div>\n\t\t<div ui-view></div>\n\t</div>\n</div>');
 $templateCache.put('imageGallery/imageGallery.template.html','<div ng-click="gallery.trackCarousel($event)" uib-carousel no-wrap="true" template-url="imageGallery/slide.template.html" active="gallery.active">\n    <div uib-slide ng-repeat="slide in gallery.project.images track by $index" index="$index">\n        <img ng-src="{{slide}}">\n    </div>\n</div>\n<div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails}" ng-click="gallery.showDetails=false;" class="details">\n\t<h3>{{gallery.project.name}}</h3>\n\t<p>{{gallery.project.city}}</p>\n\t<ul ng-repeat="detail in gallery.project.details">\n\t\t<li>{{detail.fieldContent}}</li>\n\t\t<li>{{detail.fieldName}}</li>\n\t</ul>\n</div>');
 $templateCache.put('imageGallery/slide.template.html','<div class="carousel-inner" ng-transclude></div>\n<a role="button" href class="left carousel-control" ng-click="prev()" ng-class="{ disabled: isPrevDisabled() }" ng-show="slides.length > 1">\n  <span class="sr-only">previous</span>\n</a>\n<a role="button" href class="right carousel-control" ng-click="next()" ng-class="{ disabled: isNextDisabled() }" ng-show="slides.length > 1">\n  <span class="sr-only">next</span>\n</a>\n<ol class="carousel-indicators" ng-show="slides.length > 1">\n  <li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{ active: isActive(slide) }" ng-click="select(slide)">\n    <span class="sr-only">slide {{ $index + 1 }} of {{ slides.length }}<span ng-if="isActive(slide)">, currently active</span></span>\n  </li>\n</ol>');
-$templateCache.put('dashButton/dashButton.template.html','<div class="button" ng-class="{info: dash.project.name === \'Info\'}" ng-style="dash.setDashColor()" ng-click="dash.callback({id: dash.project.id})"></div>\n<p class="name">{{dash.project.name}}</p>');}]);})();
+$templateCache.put('info/info.template.html','<div uib-carousel no-wrap="true" template-url="info/slideInfo.template.html" active="info.active">\n    <div uib-slide index="0">\n        <div class="slide">\n        \t<h2>Dot Dash</h2>\n        \t<address>\n        \t\t<a target="_blank" ng-href="{{info.info.company.map}}">{{info.info.company.address1}}</a><br>\n        \t\t<a target="_blank" ng-href="{{info.info.company.map}}">{{info.info.company.address2}}</a><br>\n        \t\t<a target="_blank" ng-href="{{info.info.company.map}}">{{info.info.company.city}}</a><br>\n        \t\t<a ng-href="tel:{{info.info.company.phone}}">{{info.info.company.phone}}</a><br>\n        \t\t<a ng-href="mailto:{{info.info.company.email}}">{{info.info.company.email}}</a>\n        \t</address>\n        \t<ul ng-repeat="employee in info.info.employees">\n        \t\t<li>{{employee.name}}</li>\n        \t\t<li><a class="email" ng-href="mailto:{{employee.email}}">{{employee.email}}</a></li>\n        \t</ul>\n        \t<img id="teamPhoto" src="icons/team_photo.jpg">\n        </div>\n    </div>\n     <div uib-slide index="1">\n        <div class="slide">\n        \t<h2>Profile</h2>\n        \t<div ng-bind-html="info.info.profile"></div>\n        </div>\n    </div>\n     <div uib-slide index="2">\n        <div class="slide">\n        \t<h2>Principal</h2>\n        \t<div ng-bind-html="info.info.profile"></div>\n        </div>\n    </div>\n</div>');
+$templateCache.put('info/slideInfo.template.html','<div class="carousel-inner" ng-transclude></div>\n<ol class="carousel-indicators" ng-show="slides.length > 1">\n  <li ng-class="{ active: isActive(slides[0]) }" ng-click="select(slides[0])">\n  \t<h4>Contact</h4>\n    <span class="sr-only">Contacts<span ng-if="isActive(slides[0])">, currently active</span></span>\n  </li>\n  <li ng-class="{ active: isActive(slides[1]) }" ng-click="select(slides[1])">\n  \t<h4>Profile</h4>\n    <span class="sr-only">Profile<span ng-if="isActive(slides[1])">, currently active</span></span>\n  </li>\n  <li ng-class="{ active: isActive(slides[2]) }" ng-click="select(slides[2])">\n  \t<h4>Principal</h4>\n    <span class="sr-only">Principal<span ng-if="isActive(slides[2])">, currently active</span></span>\n  </li>\n</ol>');
+$templateCache.put('dashButton/dashButton.template.html','<div class="button project" ng-if="dash.project.name !== \'Info\'" ng-style="dash.setDashColor()" ng-click="dash.callback({id: dash.project.id})"></div>\n<div class="button info" ng-if="dash.project.name === \'Info\'" ng-class="{hover: dash.hover}" ng-style="dash.setDashColor()" ng-click="dash.callback({id: dash.project.id})"  ng-mouseover="dash.setInfoHover()" ng-mouseleave="dash.removeInfoHover()"></div>\n<p class="name">{{dash.project.name}}</p>');}]);})();
 (function() {
 	'use strict';
 
@@ -49191,7 +49290,7 @@ $templateCache.put('dashButton/dashButton.template.html','<div class="button" ng
 		.config(['$locationProvider',
 			function($locationProvider) {
 				$locationProvider.html5Mode({
-				  enabled: true,
+				  enabled: false,
 				  requireBase: false
 				});
 			}]);

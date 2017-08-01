@@ -3,29 +3,29 @@
         <div class="slide">
         	<h2>Dot Dash</h2>
         	<address>
-        		{{info.info.company.address1}}<br>
-        		{{info.info.company.address2}}<br>
-        		{{info.info.company.city}}<br>
-        		{{info.info.company.phone}}<br>
-        		{{info.info.company.email}}
+        		<a target="_blank" ng-href="{{info.info.company.map}}">{{info.info.company.address1}}</a><br>
+        		<a target="_blank" ng-href="{{info.info.company.map}}">{{info.info.company.address2}}</a><br>
+        		<a target="_blank" ng-href="{{info.info.company.map}}">{{info.info.company.city}}</a><br>
+        		<a ng-href="tel:{{info.info.company.phone}}">{{info.info.company.phone}}</a><br>
+        		<a ng-href="mailto:{{info.info.company.email}}">{{info.info.company.email}}</a>
         	</address>
         	<ul ng-repeat="employee in info.info.employees">
         		<li>{{employee.name}}</li>
-        		<li>{{employe.email}}</li>
+        		<li><a class="email" ng-href="mailto:{{employee.email}}">{{employee.email}}</a></li>
         	</ul>
-        	<img src="icons/team_photo.jpg">
+        	<img id="teamPhoto" src="icons/team_photo.jpg">
         </div>
     </div>
      <div uib-slide index="1">
         <div class="slide">
         	<h2>Profile</h2>
-        	<p>{{info.info.profile}}</p>
+        	<div ng-bind-html="info.info.profile"></div>
         </div>
     </div>
      <div uib-slide index="2">
         <div class="slide">
         	<h2>Principal</h2>
-        	<p>{{info.info.principal}}</p>
+        	<div ng-bind-html="info.info.profile"></div>
         </div>
     </div>
 </div>

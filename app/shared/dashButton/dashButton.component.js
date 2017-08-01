@@ -18,6 +18,8 @@
 
 			// Interface
 			self.setDashColor	= setDashColor;
+			self.setInfoHover 		= setInfoHover;
+			self.removeInfoHover 	= removeInfoHover;
 
 			/////////////////////////
 			
@@ -37,6 +39,18 @@
 				else {
 					return { "visibility": "hidden"  };
 				}
+			}
+
+			function setInfoHover(){
+				var infoButtons = document.getElementsByClassName("info");
+				angular.element(infoButtons).addClass('hover');
+				angular.element(infoButtons[4]).addClass('info-last');
+
+			}
+
+			function removeInfoHover(){
+				var infoButtons = document.getElementsByClassName("info");
+				angular.element(infoButtons).removeClass('hover');
 			}
 		}
 

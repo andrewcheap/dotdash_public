@@ -8,9 +8,37 @@ info {
 info .slide {
 	width: 690px;
 	height: 342px;
-	background: blue;
+	background: #000;
 	color: white;
 	text-align: left;
+	padding: 10px;
+}
+
+info .slide p {
+    line-height: 1.5;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+info .slide ul, info .slide address {
+	margin: 10px 0px;
+}
+
+info .slide address {
+	font-size: 13px;
+}
+
+info .slide ul {
+	font-size: 11px;
+}
+
+info .slide a {
+	text-decoration: none;
+	color: white ;
+}
+
+info .email {
+	font-weight: 700;
 }
 
 info .carousel-control {
@@ -25,7 +53,15 @@ info .carousel-indicators {
 }
 
 info h2 {
-	font-size: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+info img#teamPhoto {
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 info .carousel-indicators li, info .carousel-indicators li.active {

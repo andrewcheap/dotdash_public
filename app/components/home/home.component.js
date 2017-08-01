@@ -41,10 +41,9 @@
 			}
 
 			function getProjectButton(index){
-
 				var project;
-				if(index === 7 || index === 37 || index === 52 ||
-					index === 67 || index === 82) {
+
+				if(isInfoButton(index)) {
 					project = info;
 				}
 				else{
@@ -59,12 +58,21 @@
 				$location.path(url);
 			}
 
-
+			//Private methods
+			function isInfoButton(index){
+				if(index === 7 || index === 37 || index === 52 ||
+					index === 67 || index === 82) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+							
 
 			// Private methods for handling promises
 			function getAllProjectsComplete(results){
 				self.projects = results.data;
-				console.log("self.projects", self.projects);
 				console.log("complete", results);
 			}
 

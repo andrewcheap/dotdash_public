@@ -25,7 +25,10 @@
     "gulp-concat": "^2.6.1",
     "gulp-html-replace": "^1.6.2",
     "gulp-jshint": "^2.0.4",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
-    "jshint": "^2.9.5"
+    "install": "^0.10.1",
+    "jshint": "^2.9.5",
+    "npm": "^5.3.0"
   }
 }

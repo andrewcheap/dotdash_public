@@ -11,6 +11,7 @@ const uglify = require('gulp-uglify');
 const htmlreplace = require('gulp-html-replace');
 const cleanCSS = require('gulp-clean-css');
 const templateCache = require('gulp-angular-templatecache');
+const sourcemaps = require('gulp-sourcemaps');
 
 // Define paths
 const path = {
@@ -93,8 +94,10 @@ gulp.task('default', ['watch']);
 /* minifyJS */
 gulp.task('minifyJS', function() {
 	return gulp.src(ALL_JS)
+		// .pipe(sourcemaps.init())
 		.pipe(concat('all.min.js'))
-		.pipe(uglify())
+		.pipe(uglify({mangle:false}))
+		// .pipe(sourcemaps.write('maps'))
 		.pipe(gulp.dest(path.DEST_PROD));
 });
 

@@ -1,9 +1,6 @@
 'use strict';
 
 module.exports = {
-	'scripts': {
-		'uglifyjs': 'uglifyjs -b beautify=false,max-line-len=120000',
-	},
 	'files': {
 		'vendor': [
 			"node_modules/angular/angular.min.js",

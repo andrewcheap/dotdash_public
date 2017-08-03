@@ -9,15 +9,15 @@ image-gallery .carousel-control {
 }
 
 image-gallery .left.carousel-control {
-	cursor: url(icons/cursor_bck.png), url(icons/cursor_bck.cur), crosshair;
+	cursor: url(images/cursor_bck.png), url(images/cursor_bck.cur), crosshair;
 }
 
 image-gallery .right.carousel-control {
-	cursor: url(icons/cursor_fwd.png), url(icons/cursor_fwd.cur), crosshair;
+	cursor: url(images/cursor_fwd.png), url(images/cursor_fwd.cur), crosshair;
 }
 
 image-gallery .carousel-indicators {
-	bottom: 0;
+	bottom: 3px;
 	left: 0;
 	margin: 0;
 	text-align: left;
@@ -79,7 +79,7 @@ image-gallery .details.open {
 	transition-duration: .5s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 	right: 0px;
-	cursor: url(icons/cursor_bck.png), url(icons/cursor_bck.cur), crosshair;
+	cursor: url(images/cursor_bck.png), url(images/cursor_bck.cur), crosshair;
 }
 
 image-gallery .details.closed {

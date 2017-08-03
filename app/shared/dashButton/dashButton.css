@@ -27,6 +27,7 @@ dash-button p {
 	top: -4px;
 	left: 22px;
 	display: none;
+	width: 400px;
 }
 
 dash-button .button:hover:not(.info) + .name { 

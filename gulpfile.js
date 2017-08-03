@@ -73,16 +73,16 @@ gulp.task('getFonts', function() {
 		.pipe(gulp.dest(path.DEST_PROD + '/fonts'))
 });
 
-/*get icons*/
-gulp.task('getIcons', function() {
-	return gulp.src(config.files.icons)
-		.pipe(gulp.dest(path.DEST_DEV + '/icons'))
-		.pipe(gulp.dest(path.DEST_PROD + '/icons'))
+/*get images*/
+gulp.task('getImages', function() {
+	return gulp.src(config.files.images)
+		.pipe(gulp.dest(path.DEST_DEV + '/images'))
+		.pipe(gulp.dest(path.DEST_PROD + '/images'))
 });
 
 /* watch */
 gulp.task('watch', function() {
-	gulp.watch(path.WATCH_FILES, ['lint', 'templateCache', 'copy', 'concatCSS', 'concatJS','getFonts', 'getIcons']);
+	gulp.watch(path.WATCH_FILES, ['lint', 'templateCache', 'copy', 'concatCSS', 'concatJS','getFonts', 'getImages']);
 })
 
 /* set default */
@@ -116,4 +116,4 @@ gulp.task('replaceHTML', function(){
 });
 
 /* prod */
-gulp.task('prod', ['replaceHTML', 'minifyCSS', 'minifyJS', 'getFonts', 'getIcons']);
+gulp.task('prod', ['replaceHTML', 'minifyCSS', 'minifyJS', 'getFonts', 'getImages']);

@@ -6,7 +6,7 @@ module.exports = {
 	},
 	'files': {
 		'vendor': [
-			"node_modules/angular/angular.js",
+			"node_modules/angular/angular.min.js",
 			"node_modules/angular-animate/angular-animate.min.js",
 			"node_modules/angular-touch/angular-touch.min.js",
 			"node_modules/angular-sanitize/angular-sanitize.min.js",
@@ -62,8 +62,8 @@ module.exports = {
 			"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
 			"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2",
 		],
-		'icons': [
-			"assets/icons/**.*",
+		'images': [
+			"assets/images/**.*",
 		],
 		'css': [
 			"app/components/**/*.css",

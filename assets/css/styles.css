@@ -29,6 +29,11 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	background: url(images/background.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	line-height: 1;
 }
 ol, ul {
@@ -51,11 +56,6 @@ table {
 	color: #fff;
 	font-family: arial,helvetica,sans-serif;
 }
-
-body {
-	background: gray;
-}
-
 img {
 	height: 342px;
 }

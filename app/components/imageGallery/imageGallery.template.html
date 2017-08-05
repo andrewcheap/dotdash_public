@@ -1,9 +1,12 @@
-<div ng-click="gallery.trackCarousel($event)" uib-carousel no-wrap="true" template-url="imageGallery/slide.template.html" active="gallery.active">
+<div ng-if="!gallery.project.comingSoon" ng-click="gallery.trackCarousel($event)" uib-carousel no-wrap="true" template-url="imageGallery/slide.template.html" active="gallery.active">
     <div uib-slide ng-repeat="slide in gallery.project.images track by $index" index="$index">
         <img ng-src="{{slide}}">
     </div>
 </div>
-<div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails}" ng-click="gallery.showDetails=false;" class="details">
+<div class="comingSoonContainer" ng-if="gallery.project.comingSoon">
+	<img class="comingSoon" ng-src="{{gallery.project.images[0]}}">
+</div>
+<div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails, comingSoon: gallery.project.comingSoon}" ng-click="gallery.showDetails=false;" class="details">
 	<h3>{{gallery.project.name}}</h3>
 	<p>{{gallery.project.city}}</p>
 	<ul ng-repeat="detail in gallery.project.details">

@@ -82,7 +82,22 @@ image-gallery .details.open {
 	cursor: url(images/cursor_bck.png), url(images/cursor_bck.cur), crosshair;
 }
 
-image-gallery .details.closed {
+image-gallery .details.open.comingSoon {
+	left: 0px;
+	cursor: auto;
+}
+
+image-gallery .comingSoonContainer {
+	position: relative;
+	width: 690px;
+}
+
+image-gallery img.comingSoon {
+	position: absolute;
+	right: 0px;
+}
+
+image-gallery .details.closed:not(.comingSoon) {
 	transition-property: all;
 	transition-duration: .1s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);

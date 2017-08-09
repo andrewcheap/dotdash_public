@@ -56,6 +56,27 @@ table {
 	color: #fff;
 	font-family: arial,helvetica,sans-serif;
 }
-img {
+.desktop-only img {
 	height: 342px;
+}
+
+/* Small Devices, Tablets */
+.mobile-only {
+	display: none;
+}
+
+@media only screen and (max-width : 1211px) {
+	.desktop-only {
+		display: none;
+	}
+	.mobile-only {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	body {
+		background: black;
+	}
 }

@@ -8,7 +8,7 @@
 			controllerAs: 'home',
 		});
 
-		function homeController(projectDataService, $location) {
+		function homeController(projectDataService, $location, $stateParams) {
 			/* jshint validthis: true */
 			var self = this;
 
@@ -17,6 +17,7 @@
 			self.getDashNumber 		= getDashNumber;
 			self.getDotNumber 		= getDotNumber;
 			self.getProjectButton	= getProjectButton;
+			self.showGallery		= showGallery;
 
 
 			activate();
@@ -56,6 +57,11 @@
 			function getProject(id){
 				var url = "/" + id;
 				$location.path(url);
+			}
+
+			//For mobile gallery
+			function showGallery(projectId){
+				return projectId === ($stateParams.id);
 			}
 
 			//Private methods

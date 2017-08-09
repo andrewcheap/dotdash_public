@@ -1,18 +1,27 @@
 <div class="container" ng-if="home.projects">
-	<div class="dash-container-outer">
-		<div class="dash-container-inner">
-			<div class="dash" ng-repeat="i in home.getDashNumber(435) track by $index"></div>
+	<div class="desktop-only">
+		<div class="dash-container-outer">
+			<div class="dash-container-inner">
+				<div class="dash" ng-repeat="i in home.getDashNumber(435) track by $index"></div>
+			</div>
+		</div>
+		<div class="button-container-outer">
+			<div class="button-container-inner">
+				<dash-button callback="home.getProject(id)" ng-repeat="i in home.getDashNumber(435) track by $index" project="home.getProjectButton($index)"></dash-button>
+			</div>
+		</div>
+		<div class="dot-container-outer">
+			<div ng-if="!home.project" class="dot-container-inner">
+				<div class="dot" ng-repeat="i in home.getDotNumber(1682) track by $index"></div>
+			</div>
+			<div ui-view></div>
 		</div>
 	</div>
-	<div class="button-container-outer">
-		<div class="button-container-inner">
-			<dash-button callback="home.getProject(id)" ng-repeat="i in home.getDashNumber(435) track by $index" project="home.getProjectButton($index)"></dash-button>
+	<div class="mobile-only">
+		<button class="info-button">Info</button>
+		<div ng-repeat="project in home.projects">
+			<button ng-click="home.getProject(project.id)" ng-style={'background':project.color} class="project-button">{{project.name}}</button>
+			<div ng-show="home.showGallery(project.id)" ui-view></div>
 		</div>
-	</div>
-	<div class="dot-container-outer">
-		<div ng-if="!home.project" class="dot-container-inner">
-			<div class="dot" ng-repeat="i in home.getDotNumber(1682) track by $index"></div>
-		</div>
-		<div ui-view></div>
 	</div>
 </div>

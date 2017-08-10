@@ -20,7 +20,6 @@
 
 			/////////////////////////
 			function activate(){
-				console.log("stateParams", $stateParams.id);
 				if($stateParams.id) {
 					projectDataService.getProject($stateParams.id).then(getProjectComplete).catch(requestRejected);
 				}

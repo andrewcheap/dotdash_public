@@ -126,13 +126,17 @@ image-gallery .carousel-control.right,  image-gallery .carousel-control.left{
 	width: 85%;
 }
 
-.mobile-only image-gallery img.comingSoon, .mobile-only image-gallery .details.details.comingSoon {
+.mobile-only image-gallery img.comingSoon, .mobile-only image-gallery .details.comingSoon {
 	float: right;
 }
 
 .mobile-only image-gallery .details:not(.comingSoon) {
 	float: left;
+}
+
+.mobile-only image-gallery .details {
 	width: 15%;
+	height: auto;
 }
 
 .mobile-only image-gallery .carousel-indicators {
@@ -145,3 +149,14 @@ image-gallery .carousel-control.right,  image-gallery .carousel-control.left{
 .mobile-only image-gallery img {
 	width: 100%;
 }
+
+.mobile-only image-gallery .imgContainer {
+    display: inline-block;
+    position: relative;
+    width: 76%;
+}
+
+.mobile-only image-gallery .comingSoonContainer {
+	width: 83%;
+	float: left;
+};

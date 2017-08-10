@@ -4,7 +4,9 @@
     </div>
 </div>
 <div class="comingSoonContainer" ng-if="gallery.project.comingSoon">
-	<img class="comingSoon" ng-src="{{gallery.project.images[0]}}">
+	<div class="imgContainer">
+		<img class="comingSoon" ng-src="{{gallery.project.images[0]}}">
+	</div>
 </div>
 <div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails, comingSoon: gallery.project.comingSoon}" ng-click="gallery.showDetails=false;" class="details">
 	<h3>{{gallery.project.name}}</h3>

@@ -5,6 +5,7 @@
 			// External Dependencies
 			'ui.bootstrap',
 			'ngAnimate',
+			'ngTouch'
 			// Internal Dependencies
 			
 		]);

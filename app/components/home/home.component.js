@@ -27,7 +27,7 @@
 				projectDataService.getProjects().then(getAllProjectsComplete).catch(requestRejected);
 			}
 
-			var info = {
+			self.info = {
 				color: '#0000ff',
 				name: 'Info',
 				id: 'info',
@@ -45,7 +45,7 @@
 				var project;
 
 				if(isInfoButton(index)) {
-					project = info;
+					project = self.info;
 				}
 				else{
 					project = _.find(self.projects, function(proj) { return proj.position === index; });

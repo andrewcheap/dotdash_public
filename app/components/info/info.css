@@ -55,7 +55,11 @@ info .carousel-indicators {
 info h2 {
     font-size: 14px;
     font-weight: 700;
-    text-transform: uppercase;
+	text-transform: uppercase;
+}
+
+info div:not(.details) h2 {
+	padding-left: 10px;
 }
 
 info .details {

@@ -8,14 +8,14 @@
 			controllerAs: 'gallery',
 		});
 
-		function imageGalleryController(projectDataService, $scope, $stateParams) {
+		function imageGalleryController(projectDataService, $scope, $stateParams, $timeout) {
 			/* jshint validthis: true */
 			var self = this;
 			self.active = 0;
 
 			// Interface
 			self.trackCarousel = trackCarousel;
-
+			self.projectLoading = true;
 			activate();
 
 			/////////////////////////
@@ -39,6 +39,10 @@
 				self.project = results.data;
 				self.active = 0;
 				self.showDetails = false;
+				$timeout(function(){
+					self.projectLoading = false;
+				}, 100); 
+				
 				console.log("complete", results);
 			}
 

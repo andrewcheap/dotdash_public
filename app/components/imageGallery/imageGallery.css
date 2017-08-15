@@ -109,6 +109,13 @@ image-gallery .carousel-control.right,  image-gallery .carousel-control.left{
 	background-image: none;
 }
 
+image-gallery #projectLoad {
+	width: 690px;
+	height: 342px;
+	position: absolute;
+	background: black;
+}
+
 /* Mobile */
 .mobile-only image-gallery, 
 .mobile-only image-gallery .comingSoonContainer, 

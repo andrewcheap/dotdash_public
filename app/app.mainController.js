@@ -9,13 +9,12 @@
 			var self = this;
 
 			// Interface
-
+			self.loading = true;
 
 
 			activate();
 			/////////////////////////
 			function activate(){
-				self.loading = true;
 				// Get the projects
 				projectDataService.getProjects().then(getAllProjectsComplete).catch(requestRejected);
             }

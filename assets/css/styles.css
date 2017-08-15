@@ -61,7 +61,7 @@ button {
     height: 100%;
     z-index: 999;
 	overflow: visible;
-    background: url('/images/preloader.gif') no-repeat center center #000;
+    background: url('/images/preloader.gif') no-repeat center center rgba(9,9,9,1);
  }
 
 .desktop-only img {

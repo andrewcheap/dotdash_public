@@ -8,8 +8,9 @@
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<meta name=viewport content="width=device-width, initial-scale=1">
 </head>
-<body>
-	<home>
+<body ng-controller="MainController as main">
+	<div id="preloader" ng-show="main.loading"></div>
+	<home ng-show="!main.loading" projects="main.projects">
 		<dash-button></dash-button>
 	</home>
 

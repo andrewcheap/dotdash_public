@@ -7,8 +7,8 @@
 		
 		// Internal dependencies
 		'public.routes',
-		'public.api',
 		'public.home',
+		'public.mainCtrl',
 		'templates'
 		])
 		.config(['$locationProvider',

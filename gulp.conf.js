@@ -41,12 +41,15 @@ module.exports = {
 			"app/shared/dashButton/dashButton.module.js",
 			"app/shared/dashButton/dashButton.component.js",
 
+			// mainController
+			"app/app.mainController.js",
+
 			// routes
 			"app/app.routes.js",
 			
 			// TEMPLATE CACHE
 			"app/templates.js",
-
+			
 			// app
 			"app/app.module.js",
 					],

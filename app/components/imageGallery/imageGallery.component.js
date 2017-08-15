@@ -36,7 +36,6 @@
 
 			// Private methods for handling promises
 			function getProjectComplete(results){
-				console.log("here");
 				self.project = results.data;
 				self.active = 0;
 				self.showDetails = false;

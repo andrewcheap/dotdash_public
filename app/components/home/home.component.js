@@ -6,9 +6,12 @@
 			templateUrl: 'home/home.template.html',
 			controller: homeController,
 			controllerAs: 'home',
+			bindings: {
+				projects: '<'
+			},
 		});
 
-		function homeController(projectDataService, $location, $stateParams) {
+		function homeController($location, $stateParams, $scope) {
 			/* jshint validthis: true */
 			var self = this;
 
@@ -23,8 +26,13 @@
 			activate();
 			/////////////////////////
 			function activate(){
-				// Get the projects
-				projectDataService.getProjects().then(getAllProjectsComplete).catch(requestRejected);
+				$scope.$watch(function(){
+					return self.projects;
+				}, function(newValue, oldValue){
+					if(newValue !== oldValue) {
+						self.projects = newValue;
+					}
+				});
 			}
 
 			self.info = {
@@ -64,6 +72,7 @@
 				return projectId === ($stateParams.id);
 			}
 
+
 			//Private methods
 			function isInfoButton(index){
 				if(index === 7 || index === 37 || index === 52 ||
@@ -74,16 +83,7 @@
 					return false;
 				}
 			}
-							
 
-			// Private methods for handling promises
-			function getAllProjectsComplete(results){
-				self.projects = results.data;
-				console.log("complete", results);
-			}
-
-			function requestRejected(error){
-				console.log("error", error);
-			}
+	
 		}
 })();

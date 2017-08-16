@@ -13,9 +13,12 @@
 	<div ng-class="{open: gallery.showDetails, closed: !gallery.showDetails, comingSoon: gallery.project.comingSoon}" ng-click="gallery.showDetails=false;" class="details">
 		<h3>{{gallery.project.name}}</h3>
 		<p>{{gallery.project.city}}</p>
-		<ul ng-repeat="detail in gallery.project.details">
+		<ul ng-repeat="detail in gallery.project.details" ng-if="detail.fieldName !== 'Disclaimer'">
 			<li>{{detail.fieldName}}</li>
 			<li>{{detail.fieldContent}}</li>
 		</ul>
+		<p class="disclaimer" ng-repeat="detail in gallery.project.details" ng-if="detail.fieldName === 'Disclaimer'"> 
+			{{detail.fieldContent}}
+		</p>
 	</div>
 </div>

@@ -58,8 +58,12 @@ info h2 {
 	text-transform: uppercase;
 }
 
-info div:not(.details) h2 {
-	padding-left: 10px;
+info div h2 {
+	padding: 10px 0px 0px 10px;
+}
+
+info div .details h2 {
+	padding: 0px;
 }
 
 info .details {

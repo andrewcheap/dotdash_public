@@ -65,6 +65,10 @@ image-gallery .details p {
 	font-weight: 400;
 }
 
+image-gallery ul {
+	margin: 10px 0px;
+}
+
 image-gallery ul li {
 	list-style: none;
 	font-size: 11px;
@@ -114,6 +118,14 @@ image-gallery #projectLoad {
 	height: 342px;
 	position: absolute;
 	background: black;
+}
+
+image-gallery p.disclaimer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	font-size: 8px;
+	padding: 10px;
 }
 
 /* Mobile */

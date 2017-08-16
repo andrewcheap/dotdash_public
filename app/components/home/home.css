@@ -120,4 +120,8 @@ home button.info-button {
 home button.project-button {
 	color: black;
 }
-
+@media only screen and (max-width : 1211px) {
+	home {
+		background: black;
+	}
+}

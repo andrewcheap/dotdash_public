@@ -132,7 +132,8 @@ image-gallery p.disclaimer {
 .mobile-only image-gallery, 
 .mobile-only image-gallery .comingSoonContainer, 
 .mobile-only image-gallery .details,
-.mobile-only image-gallery img.comingSoon {
+.mobile-only image-gallery img.comingSoon,
+.mobile-only image-gallery p.disclaimer {
 	position: initial !important;
 	top: auto;
 	right: auto;
@@ -140,9 +141,15 @@ image-gallery p.disclaimer {
 	bottom: auto;
 }
 
+.mobile-only image-gallery .details p.disclaimer {
+	padding: 0px;
+	font-size: 5px;
+}
+
 .mobile-only image-gallery .carousel {
 	float: left;
 	width: 85%;
+	margin-bottom: 4px;
 }
 
 .mobile-only image-gallery img.comingSoon, .mobile-only image-gallery .details.comingSoon {
@@ -156,6 +163,13 @@ image-gallery p.disclaimer {
 .mobile-only image-gallery .details {
 	width: 15%;
 	height: auto;
+	padding: 3px;
+}
+
+.mobile-only image-gallery .details h3, 
+.mobile-only image-gallery .details li, 
+.mobile-only image-gallery .details p {
+	font-size: 7px;
 }
 
 .mobile-only image-gallery .carousel-indicators {

@@ -6,7 +6,6 @@
 			'ui.bootstrap',
 			'ngAnimate',
 			'ngSanitize',
-			'ngTouch'
 			// Internal Dependencies
 			
 		]);

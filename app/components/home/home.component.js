@@ -11,7 +11,7 @@
 			},
 		});
 
-		function homeController($location, $stateParams, $scope) {
+		function homeController($location, $stateParams, $scope, $window) {
 			/* jshint validthis: true */
 			var self = this;
 
@@ -21,6 +21,7 @@
 			self.getDotNumber 		= getDotNumber;
 			self.getProjectButton	= getProjectButton;
 			self.showGallery		= showGallery;
+			self.getProjectToggle	= getProjectToggle;
 
 
 			activate();
@@ -65,6 +66,18 @@
 			function getProject(id){
 				var url = "/" + id;
 				$location.path(url);
+			}
+
+			function getProjectToggle(id){
+				var currentPath = $window.location.hash.split('/')[1];
+				var nextUrl = "/";
+				if(id === currentPath){
+					$location.path(nextUrl);
+				}
+				else {
+					nextUrl = "/" + id;
+					$location.path(nextUrl);
+				}
 			}
 
 			//For mobile gallery

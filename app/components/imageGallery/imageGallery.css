@@ -193,3 +193,10 @@ image-gallery p.disclaimer {
 	width: 83%;
 	float: left;
 }
+
+.mobile-only image-gallery #projectLoad {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: black;
+}

@@ -17,7 +17,7 @@
 			var self = this;
 
 			// Interface
-			self.setDashColor	= setDashColor;
+			self.setDashColor		= setDashColor;
 			self.setInfoHover 		= setInfoHover;
 			self.removeInfoHover 	= removeInfoHover;
 

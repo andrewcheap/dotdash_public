@@ -17,7 +17,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const path = {
 	HTML: 'index.html',
 	APP: 'app',
-	WATCH_FILES: [config.files.app, config.files.css],
+	WATCH_FILES: [config.files.app, config.files.css, config.files.templates],
 	PROD_JS: 'all.min.js',
 	DEV_JS: 'all.js',
 	DEST_DEV: 'dist/dev',

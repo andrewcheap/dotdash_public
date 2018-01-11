@@ -2,6 +2,13 @@ image-gallery {
 	position: absolute;
 	top: 0;
 	left: 0;
+	height: 342px;
+	width: 690px;
+}
+
+image-gallery > div {
+	width: 100%;
+	height: 100%;
 }
 
 image-gallery .carousel-control {
@@ -114,8 +121,6 @@ image-gallery .carousel-control.right,  image-gallery .carousel-control.left{
 }
 
 image-gallery #projectLoad {
-	width: 690px;
-	height: 342px;
 	position: absolute;
 	background: black;
 }

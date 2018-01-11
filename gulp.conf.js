@@ -31,6 +31,10 @@ module.exports = {
 			// imageGallery
 			"app/components/imageGallery/imageGallery.module.js",
 			"app/components/imageGallery/imageGallery.component.js",
+			
+			//ddCarousel
+			"app/components/imageGallery/ddCarousel/ddCarousel.module.js",
+			"app/components/imageGallery/ddCarousel/ddCarousel.component.js",
 
 			// info
 			"app/components/info/info.module.js",

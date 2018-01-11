@@ -1,0 +1,51 @@
+dd-carousel {
+    width: 100%;
+    height: 100%;
+}
+
+dd-carousel .dd-carousel-inner {
+    width: 20000%; /* Give the container plenty of space */
+    height: 100%;
+    position: absolute;
+}
+
+dd-carousel img {
+    display: inline-block;
+}
+
+dd-carousel .prev, dd-carousel .next {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    z-index: 1000;
+}
+
+dd-carousel .prev {
+    left: 0;
+}
+
+dd-carousel .next {
+    right: 0;
+}
+
+dd-carousel .dd-carousel-nav-dots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0px;
+    list-style-type: none;
+    z-index: 2000;
+}
+
+dd-carousel li.dd-carousel-nav-dot {
+    display: inline-block;
+    width: 6px;
+	height: 6px;
+	border: none;
+	border-radius: 50%;
+    margin: 0px 3px;
+    background-color: white;
+    cursor: pointer;
+}

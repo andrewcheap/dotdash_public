@@ -5,8 +5,9 @@
 			// External Dependencies
 			'ui.bootstrap',
 			'ngAnimate',
-			'ngTouch'
+			'ngTouch',
 			// Internal Dependencies
+			'public.ddCarousel'
 			
 		]);
 })();

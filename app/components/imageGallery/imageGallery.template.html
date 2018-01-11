@@ -1,10 +1,6 @@
 <div id="projectLoad" ng-show="gallery.projectLoading"></div>
 <div ng-show="!gallery.projectLoading">
-	<div ng-if="!gallery.project.comingSoon" ng-click="gallery.trackCarousel($event)" uib-carousel no-wrap="true" template-url="imageGallery/slide.template.html" active="gallery.active">
-		<div uib-slide ng-repeat="slide in gallery.project.images track by $index" index="$index">
-			<img ng-src="{{slide}}">
-		</div>
-	</div>
+	<dd-carousel images="gallery.project.images"></dd-carousel>
 	<div class="comingSoonContainer" ng-if="gallery.project.comingSoon">
 		<div class="imgContainer">
 			<img class="comingSoon" ng-src="{{gallery.project.images[0]}}">

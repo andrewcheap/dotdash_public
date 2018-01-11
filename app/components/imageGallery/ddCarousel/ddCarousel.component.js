@@ -34,36 +34,14 @@
 
             function prev(){
                 if(self.currentIndex === 0) { return; }
-
-                // calculate the transform property
-                // we must add the image widths to get the slide property
-                if(self.currentIndex === self.lastImage){
-                    self.translateX = self.translateX - (self.widthArr[self.currentIndex - 1] - (self.galleryWidth - self.widthArr[self.currentIndex]));
-                    self.currentIndex--;
-                }
-                else{
-                    self.translateX = self.translateX - self.widthArr[--self.currentIndex];
-                }
-
-                self.slideCss.transform = 'translateX(-' + self.translateX + 'px)';
-                angular.element(document.querySelectorAll('img.slide')).css(self.slideCss);
+                self.currentIndex--;
+                self.goToSlide(self.currentIndex);
             }
 
             function next(){
                 if(self.currentIndex === self.lastImage) { return; }
-
-                // calculate the transform property
-                // we must add the image widths to get the slide property
-                if(self.currentIndex === self.secondToLastImage){
-                    self.translateX = self.translateX + (self.widthArr[self.currentIndex + 1] - (self.galleryWidth - self.widthArr[self.currentIndex]));
-                    self.currentIndex++;
-                }
-                else{
-                    self.translateX = self.translateX + self.widthArr[self.currentIndex++];
-                }
-
-                self.slideCss.transform = 'translateX(-' + self.translateX + 'px)';
-                angular.element(document.querySelectorAll('img.slide')).css(self.slideCss);
+                self.currentIndex++;
+                self.goToSlide(self.currentIndex);
             } 
             
             function goToSlide(slideIndex) {
@@ -86,7 +64,6 @@
                         }
                     );
                     if(slideIndex === self.lastImage) {
-                        console.log("last");
                         self.translateX = self.translateX - (self.galleryWidth - self.widthArr[self.lastImage]);
                     }
                 }

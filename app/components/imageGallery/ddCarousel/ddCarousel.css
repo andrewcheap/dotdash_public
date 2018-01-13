@@ -49,3 +49,15 @@ dd-carousel li.dd-carousel-nav-dot {
     background-color: white;
     cursor: pointer;
 }
+
+dd-carousel li.dd-carousel-nav-dot.active {
+    background-color: black;
+}
+
+image-gallery a.prev{
+	cursor: url(images/cursor_bck.png), url(images/cursor_bck.cur), crosshair;
+}
+
+image-gallery a.next {
+	cursor: url(images/cursor_fwd.png), url(images/cursor_fwd.cur), crosshair;
+}

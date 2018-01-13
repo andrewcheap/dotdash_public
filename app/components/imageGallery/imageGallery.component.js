@@ -14,7 +14,6 @@
 			self.active = 0;
 
 			// Interface
-			self.trackCarousel = trackCarousel;
 			self.projectLoading = true;
 			activate();
 
@@ -23,15 +22,6 @@
 				if($stateParams.id) {
 					projectDataService.getProject($stateParams.id).then(getProjectComplete).catch(requestRejected);
 				}
-			}
-
-			function trackCarousel($event){
-				self.showDetails = $event.target.innerText === 'next' && self.lastImage ? true : false;
-
-				/* After we determin if we should show details, then we reset/check if the current
-				 image is the last image. */
-				self.lastImage = (self.active == self.project.images.length - 1) ? true : false;
-
 			}
 
 			// Private methods for handling promises

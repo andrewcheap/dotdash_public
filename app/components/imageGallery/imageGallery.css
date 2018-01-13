@@ -58,6 +58,7 @@ image-gallery .details {
 	background: rgba(0,0,0,.9);
 	width: 177px;
 	padding: 10px;
+	z-index: 1000;
 }
 
 image-gallery .details h3 {

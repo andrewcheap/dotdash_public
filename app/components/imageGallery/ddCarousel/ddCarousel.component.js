@@ -7,7 +7,8 @@
 			controller: ddCarouselController,
             controllerAs: 'carousel',
             bindings: {
-				images: '<'
+                images: '<',
+                showDetails: '='
 			},
 		});
 
@@ -34,17 +35,27 @@
 
             function prev(){
                 if(self.currentIndex === 0) { return; }
+                if(self.currentIndex === self.lastImage) { 
+                    self.showDetails = false;
+                }
                 self.currentIndex--;
                 self.goToSlide(self.currentIndex);
             }
 
             function next(){
-                if(self.currentIndex === self.lastImage) { return; }
+                if(self.currentIndex === self.lastImage) { 
+                    self.showDetails = !self.showDetails;
+                    return; 
+                }
                 self.currentIndex++;
                 self.goToSlide(self.currentIndex);
             } 
             
             function goToSlide(slideIndex) {
+                if(self.showDetails){
+                    self.showDetails = false;
+                }
+
                 self.currentIndex = slideIndex;
                 
                 if(slideIndex === 0){

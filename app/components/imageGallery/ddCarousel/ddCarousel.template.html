@@ -4,5 +4,5 @@
 <a href="javascript:void(0)" ng-click="carousel.prev()" class="prev"></a>
 <a href="javascript:void(0)" ng-click="carousel.next()" class="next"></a>
 <ul class="dd-carousel-nav-dots">
-    <li class="dd-carousel-nav-dot" ng-repeat="dot in carousel.imageArray track by $index" ng-click="carousel.goToSlide($index)"></li>
+    <li class="dd-carousel-nav-dot" ng-class="{active: $index===carousel.currentIndex}" id="dot{{$index}}" ng-repeat="dot in carousel.imageArray track by $index" ng-click="carousel.goToSlide($index)"></li>
 </ul>

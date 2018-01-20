@@ -27,7 +27,7 @@
 			$scope.$watch(function(){
 				return self.project;
 			}, function(newValue, oldValue){
-				if(newValue){
+				if(newValue && newValue !== oldValue){
 					self.project = newValue;
 				}
 			});

@@ -1,6 +1,6 @@
 <div id="projectLoad" ng-show="gallery.projectLoading"></div>
 <div ng-show="!gallery.projectLoading">
-	<dd-carousel images="gallery.project.images" show-details="gallery.showDetails"></dd-carousel>
+	<dd-carousel ng-if="!gallery.project.comingSoon" images="gallery.project.images" show-details="gallery.showDetails"></dd-carousel>
 	<div class="comingSoonContainer" ng-if="gallery.project.comingSoon">
 		<div class="imgContainer">
 			<img class="comingSoon" ng-src="{{gallery.project.images[0]}}">

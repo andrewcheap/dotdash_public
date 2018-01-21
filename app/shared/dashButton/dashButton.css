@@ -21,7 +21,7 @@ dash-button .project:hover {
 dash-button p {
 	position: absolute;
 	font-size: 16px;
-	z-index: 1;
+	z-index: 10000;
 	text-transform: uppercase;
 	font-weight: 700;
 	top: -4px;

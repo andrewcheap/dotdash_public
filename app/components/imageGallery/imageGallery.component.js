@@ -13,7 +13,6 @@
 			var self = this;
 	
 			// Interface
-			self.projectLoading = true;
 			self.project = {};
 			activate();
 

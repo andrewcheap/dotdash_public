@@ -57,7 +57,6 @@
 			}
 
 			function setVisited(){
-				console.log("here");
 				self.visited = true;
 			}
 		}

@@ -136,74 +136,34 @@ image-gallery p.disclaimer {
 }
 
 /* Mobile */
-.mobile-only image-gallery, 
-.mobile-only image-gallery .comingSoonContainer, 
-.mobile-only image-gallery .details,
-.mobile-only image-gallery img.comingSoon,
-.mobile-only image-gallery p.disclaimer {
-	position: initial !important;
-	top: auto;
-	right: auto;
-	left: auto;
-	bottom: auto;
-}
+@media only screen and (max-width : 1211px) {
+	image-gallery  {
+		position: initial !important;
+		top: auto;
+		right: auto;
+		left: auto;
+		bottom: auto;
+	}
 
-.mobile-only image-gallery .details p.disclaimer {
-	padding: 0px;
-	font-size: 5px;
-}
+	image-gallery .mobile-only, 
+	image-gallery .mobile-only .comingSoonContainer, 
+	image-gallery .mobile-only .details,
+	image-gallery .mobile-only img.comingSoon,
+	image-gallery .mobile-only p.disclaimer {
+		position: initial !important;
+		top: auto;
+		right: auto;
+		left: auto;
+		bottom: auto;
+	}
 
-.mobile-only image-gallery .carousel {
-	float: left;
-	width: 85%;
-	margin-bottom: 4px;
-}
 
-.mobile-only image-gallery img.comingSoon, .mobile-only image-gallery .details.comingSoon {
-	float: right;
-}
+	image-gallery .mobile-only img.slide {
+		width: 100%;
+	}
 
-.mobile-only image-gallery .details:not(.comingSoon) {
-	float: left;
-}
+	image-gallery .mobile-only img.slide:last-child {
+		margin-bottom: -3px;
+	}
 
-.mobile-only image-gallery .details {
-	width: 15%;
-	height: auto;
-	padding: 3px;
-}
-
-.mobile-only image-gallery .details h3, 
-.mobile-only image-gallery .details li, 
-.mobile-only image-gallery .details p {
-	font-size: 7px;
-}
-
-.mobile-only image-gallery .carousel-indicators {
-	position: relative;
-	text-align: center;
-	margin: 0 auto -20px 0;
-	bottom: 20px;
-}
-
-.mobile-only image-gallery img {
-	width: 100%;
-}
-
-.mobile-only image-gallery .imgContainer {
-    display: inline-block;
-    position: relative;
-    width: 76%;
-}
-
-.mobile-only image-gallery .comingSoonContainer {
-	width: 83%;
-	float: left;
-}
-
-.mobile-only image-gallery #projectLoad {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	background: black;
 }

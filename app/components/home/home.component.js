@@ -29,9 +29,10 @@
 			function activate(){
 
 				// hack since I can't figure out why $stateParams.id is undefined
-				var currentPath = $window.location.hash.split('/')[1];
-				if(currentPath) {
-					self.getProject(currentPath);
+				self.currentPath = $window.location.hash.split('/')[1];
+
+				if(self.currentPath) {
+					self.getProject(self.currentPath);
 				}
 
 				$scope.$watchCollection(function(){
@@ -82,12 +83,11 @@
 			// For mobile
 			function getProjectToggle(id){
 				var nextUrl = "/";
-				if(id === currentPath){
+				if(id === self.currentPath){
 					$location.path(nextUrl);
 				}
 				else {
-					nextUrl = "/" + id;
-					$location.path(nextUrl);
+					self.getProject(id);
 				}
 			}
 
@@ -110,6 +110,7 @@
 
 			// Private methods for handling promises
 			function getProjectComplete(results){
+				// setting session storage to prevent the gallery from making multiple calls
 				$window.sessionStorage.setItem('project_data', JSON.stringify(results.data));
 				console.log("Project Retrieved", results);
 

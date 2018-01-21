@@ -1,5 +1,4 @@
-<div id="projectLoad" ng-show="gallery.projectLoading"></div>
-<div ng-show="!gallery.projectLoading">
+<div class="desktop-only">
 	<dd-carousel ng-if="!gallery.project.comingSoon" images="gallery.project.images" show-details="gallery.showDetails"></dd-carousel>
 	<div class="comingSoonContainer" ng-if="gallery.project.comingSoon">
 		<div class="imgContainer">
@@ -17,4 +16,7 @@
 			{{detail.fieldContent}}
 		</p>
 	</div>
+</div>
+<div class="mobile-only">
+	<img ng-repeat="image in gallery.project.images track by $index" class="slide" ng-src="{{image}}" />
 </div>

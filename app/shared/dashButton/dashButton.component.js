@@ -20,6 +20,9 @@
 			self.setDashColor		= setDashColor;
 			self.setInfoHover 		= setInfoHover;
 			self.removeInfoHover 	= removeInfoHover;
+			self.setVisited			= setVisited;
+
+			self.visited = false;
 
 			/////////////////////////
 			
@@ -51,6 +54,11 @@
 			function removeInfoHover(){
 				var infoButtons = document.getElementsByClassName("info");
 				angular.element(infoButtons).removeClass('hover');
+			}
+
+			function setVisited(){
+				console.log("here");
+				self.visited = true;
 			}
 		}
 

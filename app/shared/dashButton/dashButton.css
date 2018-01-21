@@ -47,3 +47,11 @@ dash-button .info.hover:not(.info-last) {
     transition: .1s;
     border: none;
 }
+
+dash-button .visited {
+	transform: scale(1,.3);
+    -ms-transform: scale(1,.3);
+    -moz-transform: scale(1,.3);
+    -webkit-transform: scale(1,.3);
+    transition: .1s;
+}

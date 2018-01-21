@@ -8,36 +8,20 @@
 			controllerAs: 'gallery',
 		});
 
-		function imageGalleryController(projectDataService, $scope, $stateParams, $timeout) {
+		function imageGalleryController(projectDataService, $scope, $stateParams, $timeout, $window) {
 			/* jshint validthis: true */
 			var self = this;
-			self.active = 0;
-
+	
 			// Interface
 			self.projectLoading = true;
+			self.project = {};
 			activate();
 
 			/////////////////////////
 			function activate(){
-				if($stateParams.id) {
-					projectDataService.getProject($stateParams.id).then(getProjectComplete).catch(requestRejected);
-				}
-			}
-
-			// Private methods for handling promises
-			function getProjectComplete(results){
-				self.project = results.data;
-				self.active = 0;
+				self.project = JSON.parse($window.sessionStorage.getItem('project_data'));
 				self.showDetails = false;
-				$timeout(function(){
-					self.projectLoading = false;
-				}, 100); 
-				
-				console.log("complete", results);
-			}
-
-			function requestRejected(error){
-				console.log("error", error);
+				self.projectLoading = false;
 			}
 		}
 

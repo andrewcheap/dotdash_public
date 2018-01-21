@@ -87,7 +87,7 @@
             $scope.$watchCollection(function(){
 				return self.images;
 			}, function(newValue, oldValue){
-				if(newValue && newValue !== oldValue){
+				if(newValue){
                     carouselInit(newValue);
 				}
             });

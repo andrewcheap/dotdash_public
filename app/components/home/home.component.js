@@ -11,7 +11,7 @@
 			},
 		});
 
-		function homeController($location, $stateParams, $scope, $window) {
+		function homeController($location, $scope, $stateParams, $window, projectDataService) {
 			/* jshint validthis: true */
 			var self = this;
 
@@ -27,7 +27,14 @@
 			activate();
 			/////////////////////////
 			function activate(){
-				$scope.$watch(function(){
+
+				// hack since I can't figure out why $stateParams.id is undefined
+				var currentPath = $window.location.hash.split('/')[1];
+				if(currentPath) {
+					self.getProject(currentPath);
+				}
+
+				$scope.$watchCollection(function(){
 					return self.projects;
 				}, function(newValue, oldValue){
 					if(newValue !== oldValue) {
@@ -64,12 +71,16 @@
 			}
 
 			function getProject(id){
-				var url = "/" + id;
-				$location.path(url);
+				if(id === 'info'){
+					$location.path("/info");
+				}
+				else {
+					projectDataService.getProject(id).then(getProjectComplete).catch(requestRejected);
+				}
 			}
 
+			// For mobile
 			function getProjectToggle(id){
-				var currentPath = $window.location.hash.split('/')[1];
 				var nextUrl = "/";
 				if(id === currentPath){
 					$location.path(nextUrl);
@@ -95,6 +106,19 @@
 				else {
 					return false;
 				}
+			}
+
+			// Private methods for handling promises
+			function getProjectComplete(results){
+				$window.sessionStorage.setItem('project_data', JSON.stringify(results.data));
+				console.log("Project Retrieved", results);
+
+				var url = "/" + results.data.id;
+				$location.path(url);
+			}
+
+			function requestRejected(error){
+				console.log("error", error);
 			}
 
 	

@@ -53,6 +53,7 @@ button {
 * {
 	color: #fff;
 	font-family: arial,helvetica,sans-serif;
+	-webkit-overflow-scrolling: touch;
 }
 
 #preloader {

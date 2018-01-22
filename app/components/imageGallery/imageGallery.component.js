@@ -20,7 +20,11 @@
 			function activate(){
 				self.project = JSON.parse($window.sessionStorage.getItem('project_data'));
 				self.showDetails = false;
-				self.projectLoading = false;
+				self.projectLoading = true;
+				$timeout(function(){
+					self.projectLoading = false;
+				}, 1000);
+		
 			}
 		}
 

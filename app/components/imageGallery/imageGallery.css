@@ -187,9 +187,14 @@ image-gallery .carousel-control.right,  image-gallery .carousel-control.left{
 	background-image: none;
 }
 
-image-gallery #projectLoad {
+image-gallery .project-loading {
 	position: absolute;
 	background: black;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	overflow: visible;
+	background: url('/images/preloader.gif') no-repeat center center rgba(9,9,9,1);
 }
 
 image-gallery p.disclaimer {
@@ -240,5 +245,14 @@ image-gallery p.disclaimer {
 	image-gallery .mobile-only .details {
 			height: auto;
 			width: auto;
+	}
+	
+	image-gallery .mobile-only .project-loading {
+		height: 100px;
+		position: initial !important;
+		top: auto;
+		right: auto;
+		left: auto;
+		bottom: auto;
 	}
 }

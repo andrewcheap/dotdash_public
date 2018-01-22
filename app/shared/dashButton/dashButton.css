@@ -17,6 +17,7 @@ dash-button div {
 }
 
 dash-button .project:hover {
+	-webkit-backface-visibility: hidden;
 	transform: scale(1,3);
     -ms-transform: scale(1,3);
     -moz-transform: scale(1,3);
@@ -62,6 +63,7 @@ dash-button .info-last.hover + .name {
 }
 
 dash-button .info.hover:not(.info-last) {
+	-webkit-backface-visibility: hidden;
     transform: matrix(1, 0, 0, 3, 0, 6);
     -ms-transform: matrix(1, 0, 0, 3, 0, 6);
     -moz-transform: matrix(1, 0, 0, 3, 0, 6);
@@ -71,6 +73,7 @@ dash-button .info.hover:not(.info-last) {
 }
 
 dash-button .visited {
+	-webkit-backface-visibility: hidden;
 	transform: scale(1,.3);
     -ms-transform: scale(1,.3);
     -moz-transform: scale(1,.3);

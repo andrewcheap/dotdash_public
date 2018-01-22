@@ -18,5 +18,16 @@
 	</div>
 </div>
 <div class="mobile-only">
+		<div class="details">
+				<h3>{{gallery.project.name}}</h3>
+				<p>{{gallery.project.city}}</p>
+				<ul ng-repeat="detail in gallery.project.details" ng-if="detail.fieldName !== 'Disclaimer'">
+					<li>{{detail.fieldName}}</li>
+					<li>{{detail.fieldContent}}</li>
+				</ul>
+				<p class="disclaimer" ng-repeat="detail in gallery.project.details" ng-if="detail.fieldName === 'Disclaimer'"> 
+					{{detail.fieldContent}}
+				</p>
+			</div>
 	<img ng-repeat="image in gallery.project.images track by $index" class="slide" ng-src="{{image}}" />
 </div>

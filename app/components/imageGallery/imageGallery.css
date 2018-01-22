@@ -237,5 +237,8 @@ image-gallery p.disclaimer {
 	image-gallery .mobile-only img.slide:last-child {
 		margin-bottom: -3px;
 	}
-
+	image-gallery .mobile-only .details {
+			height: auto;
+			width: auto;
+	}
 }

@@ -112,7 +112,7 @@
 			function getProjectComplete(results){
 				// setting session storage to prevent the gallery from making multiple calls
 				$window.sessionStorage.setItem('project_data', JSON.stringify(results.data));
-				console.log("Project Retrieved", results);
+				// console.log("Project Retrieved", results);
 
 				var url = "/" + results.data.id;
 				$location.path(url);

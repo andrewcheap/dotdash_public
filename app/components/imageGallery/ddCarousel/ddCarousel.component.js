@@ -131,10 +131,16 @@
 
             // save image widths to be used for slider
             var saveImageWidths = function(imgArr){
-                self.widthArr = imgArr.map(function(img){
-                    return img.width / 1.3333333333333333333;  // this calculation is fragile.  Assumes all images uploaded are 456 height
-                });
-
+                if(self.galleryWidth === 690){
+                    self.widthArr = imgArr.map(function(img){
+                        return img.width / 1.3333333333333333333;  // this calculation is fragile.  Assumes all images uploaded are 456 height
+                    });
+                }
+                else {
+                    self.widthArr = imgArr.map(function(img){
+                        return img.width;  // this calculation is fragile.  Assumes all images uploaded are 456 height
+                    });
+                }
                 // Return so we can chain 'then'
                 return imgArr;
             }

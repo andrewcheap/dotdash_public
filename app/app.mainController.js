@@ -25,7 +25,7 @@
 			function getAllProjectsComplete(results){
 				self.projects = results.data;
 				self.loading = false;
-				console.log("complete", results);
+				// console.log("complete", results);
 			}
 
 			function requestRejected(error){

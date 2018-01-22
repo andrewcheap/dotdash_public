@@ -120,13 +120,13 @@
                     };
                     img.src = path;
                 });
-            }
+            };
 
             // Waits for all images to load
             var loadAllImages = function(paths){
                 return Promise.all(paths.map(function(path){
                     return loadImage(path);
-                }))
+                }));
             };
 
             // save image widths to be used for slider
@@ -143,7 +143,7 @@
                 }
                 // Return so we can chain 'then'
                 return imgArr;
-            }
+            };
 
             // Angular giving dupes so doing this manually
             var getImagesFromDom = function(imgArr){
@@ -153,7 +153,7 @@
 
                 // Return so we can chain 'then'
                 return imgArr;
-            }
+            };
 
 
 		}

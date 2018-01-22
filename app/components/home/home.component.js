@@ -11,7 +11,7 @@
 			},
 		});
 
-		function homeController($location, $scope, $stateParams, $window, projectDataService) {
+		function homeController($location, $scope, $stateParams, $window, projectDataService, $timeout) {
 			/* jshint validthis: true */
 			var self = this;
 
@@ -24,6 +24,8 @@
 			self.getProjectToggle	= getProjectToggle;
 
 
+	
+			
 			activate();
 			/////////////////////////
 			function activate(){
@@ -74,6 +76,7 @@
 			function getProject(id){
 				if(id === 'info'){
 					$location.path("/info");
+					self.projectId = 'info';
 				}
 				else {
 					projectDataService.getProject(id).then(getProjectComplete).catch(requestRejected);
@@ -82,9 +85,15 @@
 
 			// For mobile
 			function getProjectToggle(id){
-				var nextUrl = "/";
-				if(id === self.currentPath){
-					$location.path(nextUrl);
+				self.hideGallery = true;
+				$timeout(function(){
+					self.hideGallery = false;
+				}, 10);
+
+				// var nextUrl = "/";
+				if(id === self.projectId){
+					self.projectId = null;
+					$location.path("/");
 				}
 				else {
 					self.getProject(id);
@@ -93,7 +102,7 @@
 
 			//For mobile gallery
 			function showGallery(projectId){
-				return projectId === ($stateParams.id);
+				return projectId === (self.projectId);
 			}
 
 
@@ -113,8 +122,8 @@
 				// setting session storage to prevent the gallery from making multiple calls
 				$window.sessionStorage.setItem('project_data', JSON.stringify(results.data));
 				// console.log("Project Retrieved", results);
-
-				var url = "/" + results.data.id;
+				self.projectId = results.data.id
+				var url = "/" + self.projectId;
 				$location.path(url);
 			}
 

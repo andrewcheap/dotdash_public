@@ -19,10 +19,10 @@
 	</div>
 	<div class="mobile-only">
 		<button ng-click="home.getProjectToggle(home.info.id)" class="info-button">Info</button>
-		<div ng-show="home.showGallery(project.id)" ui-view></div>
+		<div ng-show="!home.hideGallery && home.showGallery(home.info.id)" ui-view></div>
 		<div ng-repeat="project in home.projects">
 			<button ng-click="home.getProjectToggle(project.id)" ng-style={'background':project.color} class="project-button">{{project.name}}</button>
-			<div ng-show="home.showGallery(project.id)" ui-view></div>
+			<div ng-show="!home.hideGallery && home.showGallery(project.id)" ui-view></div>
 		</div>
 	</div>
 </div>

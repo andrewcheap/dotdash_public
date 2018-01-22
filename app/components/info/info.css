@@ -5,6 +5,12 @@ info {
 	font-size: 12px;
 }
 
+@media only screen and (min-width:1680px) {
+	info {
+		font-size: 16px;
+	}
+}
+
 info .slide {
 	width: 690px;
 	height: 342px;
@@ -13,6 +19,14 @@ info .slide {
 	text-align: left;
 }
 
+@media only screen and (min-width:1680px) {
+	info .slide {
+		width: 920px;
+		height: 456px;
+	}
+}
+
+
 info .slide p {
     line-height: 1.5;
     font-size: 11px;
@@ -20,16 +34,42 @@ info .slide p {
 	padding: 10px;
 }
 
+@media only screen and (min-width:1680px) {
+	info .slide p {
+		font-size: 15px;
+		margin-bottom: 13px;
+		padding: 13px;
+	}
+}
+
 info .slide ul, info .slide address {
 	margin: 10px 0px;
+}
+
+@media only screen and (min-width:1680px) {
+	info .slide ul, info .slide address {
+		margin: 13px 0px;
+	}
 }
 
 info .slide address {
 	font-size: 13px;
 }
 
+@media only screen and (min-width:1680px) {
+	info .slide address {
+		font-size: 17px;
+	}
+}
+
 info .slide ul {
 	font-size: 11px;
+}
+
+@media only screen and (min-width:1680px) {
+	info .slide ul {
+		font-size: 15px;
+	}
 }
 
 info .slide a {
@@ -58,8 +98,20 @@ info h2 {
 	text-transform: uppercase;
 }
 
+@media only screen and (min-width:1680px) {
+	info h2 {
+		font-size: 19px;
+	}
+}
+
 info div h2 {
 	padding: 10px 0px 0px 10px;
+}
+
+@media only screen and (min-width:1680px) {
+	info div h2 {
+		padding: 13px 0px 0px 13px;
+	}
 }
 
 info div .details h2 {
@@ -70,6 +122,12 @@ info .details {
 	float: left;
 	width: 30%;
 	padding: 10px;
+}
+
+@media only screen and (min-width:1680px) {
+	info .details {
+		padding: 13px;
+	}
 }
 
 info img#teamPhoto {
@@ -88,6 +146,12 @@ info .carousel-indicators li, info .carousel-indicators li.active {
 	margin: 0px 5px;
 }
 
+@media only screen and (min-width:1680px) {
+	info .carousel-indicators li, info .carousel-indicators li.active {
+		margin: 0px 7px;
+	}
+}
+
 info .carousel-indicators li h4 {
 	font-weight: 400;
 }
@@ -96,6 +160,14 @@ info .carousel-indicators li.active h4 {
 	border-bottom: 1px solid white;
 	padding-bottom: 3px;
 }
+
+@media only screen and (min-width:1680px) {
+	info .carousel-indicators li.active h4 {
+		border-bottom: 2px solid white;
+		padding-bottom: 4px;
+	}
+}
+
 
 /* MOBILE  */
 .mobile-only info {

@@ -12,7 +12,7 @@
 			},
 		});
 
-		function ddCarouselController($scope, $element) {
+		function ddCarouselController($scope, $element, $window) {
             /* jshint validthis: true */
             var self = this;
 
@@ -27,7 +27,13 @@
             activate();
 
             function activate(){
-                self.galleryWidth = 690;
+                if($window.innerWidth >= 1680){
+                    self.galleryWidth = 920;
+                }
+                else {
+                    self.galleryWidth = 690; 
+                }
+
                 self.slideCss = {
                     'transition': 'transform 1s'
                 };
@@ -126,7 +132,7 @@
             // save image widths to be used for slider
             var saveImageWidths = function(imgArr){
                 self.widthArr = imgArr.map(function(img){
-                    return img.width;
+                    return img.width / 1.3333333333333333333;  // this calculation is fragile.  Assumes all images uploaded are 456 height
                 });
 
                 // Return so we can chain 'then'

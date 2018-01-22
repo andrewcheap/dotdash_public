@@ -50,6 +50,14 @@ dd-carousel li.dd-carousel-nav-dot {
     cursor: pointer;
 }
 
+@media only screen and (min-width:1680px) {
+    dd-carousel li.dd-carousel-nav-dot {
+        width: 8px;
+        height: 8px;
+        margin: 0px 4px;
+    }
+}
+
 dd-carousel li.dd-carousel-nav-dot.active {
     background-color: black;
 }

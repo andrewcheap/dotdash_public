@@ -6,6 +6,13 @@ image-gallery {
 	width: 690px;
 }
 
+@media only screen and (min-width:1680px) {
+	image-gallery {
+		height: 456px;
+		width: 920px;
+	}
+}
+
 image-gallery > div {
 	width: 100%;
 	height: 100%;
@@ -32,12 +39,26 @@ image-gallery .carousel-indicators {
 	width: 100%;
 }
 
+@media only screen and (min-width:1680px) {
+	image-gallery .carousel-indicators {
+		bottom: 4px;
+	}
+}
+
 image-gallery .carousel-indicators li, image-gallery .carousel-indicators .active {
 	width: 6px;
 	height: 6px;
 	border: none;
 	border-radius: 50%;
 	margin: 0px 3px;
+}
+
+@media only screen and (min-width:1680px) {
+	image-gallery .carousel-indicators li, image-gallery .carousel-indicators .active {
+		width: 8px;
+		height: 8px;
+		margin: 0px 4px;
+	}
 }
 
 image-gallery .carousel-indicators li {
@@ -62,6 +83,14 @@ image-gallery .details {
 	z-index: 1000;
 }
 
+@media only screen and (min-width:1680px) {
+	image-gallery .details {
+		height: 456px;
+		width: 236px;
+		padding: 13px;
+	}
+}
+
 image-gallery .details h3 {
 	font-size: 14px;
     font-weight: 700;
@@ -69,19 +98,43 @@ image-gallery .details h3 {
     margin-bottom: 0;
 }
 
+@media only screen and (min-width:1680px) {
+	image-gallery .details h3 {
+		font-size: 19px;
+	}
+}
+
 image-gallery .details p {
 	font-size: 13px;
 	font-weight: 400;
+}
+
+@media only screen and (min-width:1680px) {
+	image-gallery .details p {
+		font-size: 17px;
+	}
 }
 
 image-gallery ul {
 	margin: 10px 0px;
 }
 
+@media only screen and (min-width:1680px) {
+	image-gallery ul {
+		margin: 13px 0px;
+	}
+}
+
 image-gallery ul li {
 	list-style: none;
 	font-size: 11px;
 	font-weight: 400;
+}
+
+@media only screen and (min-width:1680px) {
+	image-gallery ul li {
+		font-size: 15px;
+	}
 }
 
 image-gallery ul li:nth-child(even) {
@@ -106,6 +159,12 @@ image-gallery .comingSoonContainer {
 	width: 690px;
 }
 
+@media only screen and (min-width:1680px) {
+	image-gallery .comingSoonContainer {
+		width: 920px;
+	}
+}
+
 image-gallery img.comingSoon {
 	position: absolute;
 	right: 0px;
@@ -116,6 +175,12 @@ image-gallery .details.closed:not(.comingSoon) {
 	transition-duration: .1s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 	right: -177px;
+}
+
+@media only screen and (min-width:1680px) {
+	image-gallery .details.closed:not(.comingSoon) {
+		right: -236px;
+	}
 }
 
 image-gallery .carousel-control.right,  image-gallery .carousel-control.left{
@@ -133,6 +198,13 @@ image-gallery p.disclaimer {
 	left: 0px;
 	font-size: 8px;
 	padding: 10px;
+}
+
+@media only screen and (min-width:1680px) {
+	image-gallery p.disclaimer {
+		font-size: 11px;
+		padding: 13px;
+	}
 }
 
 /* Mobile */

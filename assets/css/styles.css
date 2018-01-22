@@ -68,6 +68,12 @@ button {
 	height: 342px;
 }
 
+@media only screen and (min-width:1680px) {
+	.desktop-only img {
+		height: 456px;
+	}
+}
+
 /* Small Devices, Tablets */
 .mobile-only {
 	display: none;

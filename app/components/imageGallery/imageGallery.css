@@ -233,7 +233,9 @@ image-gallery p.disclaimer {
 		left: auto;
 		bottom: auto;
 	}
-
+	image-gallery .mobile-only {
+		height: 300px;
+	}
 
 	image-gallery .mobile-only img.slide {
 		width: 100%;
@@ -248,7 +250,6 @@ image-gallery p.disclaimer {
 	}
 	
 	image-gallery .mobile-only .project-loading {
-		height: 100px;
 		position: initial !important;
 		top: auto;
 		right: auto;

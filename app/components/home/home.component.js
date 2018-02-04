@@ -74,6 +74,8 @@
 			}
 
 			function getProject(id){
+				ga('set', 'page', '/#!/' + id);
+				
 				if(id === 'info'){
 					$location.path("/info");
 					self.projectId = 'info';

@@ -30,35 +30,33 @@ info .slide {
 info .slide p {
     line-height: 1.5;
     font-size: 11px;
-	margin-bottom: 10px;
 	padding: 10px;
 }
 
 @media only screen and (min-width:1680px) {
 	info .slide p {
 		font-size: 15px;
-		margin-bottom: 13px;
 		padding: 13px;
 	}
 }
 
 info .slide ul, info .slide address {
-	margin: 10px 0px;
+	margin: 13px 0px;
 }
 
 @media only screen and (min-width:1680px) {
 	info .slide ul, info .slide address {
-		margin: 13px 0px;
+		margin: 19px 0px;
 	}
 }
 
 info .slide address {
-	font-size: 13px;
+	font-size: 12px;
 }
 
 @media only screen and (min-width:1680px) {
 	info .slide address {
-		font-size: 17px;
+		font-size: 15px;
 	}
 }
 
@@ -68,7 +66,7 @@ info .slide ul {
 
 @media only screen and (min-width:1680px) {
 	info .slide ul {
-		font-size: 15px;
+		font-size: 12px;
 	}
 }
 

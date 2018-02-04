@@ -122,7 +122,7 @@
 				// setting session storage to prevent the gallery from making multiple calls
 				$window.sessionStorage.setItem('project_data', JSON.stringify(results.data));
 				// console.log("Project Retrieved", results);
-				self.projectId = results.data.id
+				self.projectId = results.data.id;
 				var url = "/" + self.projectId;
 				$location.path(url);
 			}
